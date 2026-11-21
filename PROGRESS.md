@@ -13,8 +13,10 @@
 - Mobile first: safe areas, ≥44px tap targets, dark mode, 16px+ inputs (no iPhone zoom)
 - GitHub Actions workflow that publishes to GitHub Pages on every push to `main`
 
+**Live:** https://kikonig.github.io/snelweg/ (repo: https://github.com/KiKonig/snelweg). Every push to `main` redeploys automatically.
+
 ## Next
-- Publish to GitHub Pages (needs the user's GitHub login), test on iPhone
+- User tests Milestone 1 on the iPhone (install, airplane mode, Dutch voice)
 - Milestone 2: spaced repetition (FSRS), session builder, verbs.json, conjugation drill, grammar topic 0
 
 ## Known issues
