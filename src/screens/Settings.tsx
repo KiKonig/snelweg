@@ -3,7 +3,6 @@ import { Header, PlayButton, VoiceHelp } from '../components'
 import { exportProgress, importProgress, resetProgress } from '../db'
 import { useSettings } from '../settings'
 import { useDutchVoice } from '../tts'
-import { AudioDiagnose } from '../AudioDiagnose'
 
 async function saveFile(file: File) {
   // On iPhone the share sheet lets you "Sichern in Dateien".
@@ -115,9 +114,9 @@ export function SettingsScreen() {
           </p>
           <PlayButton text="Welkom bij Snelweg!" label="Teststimme" />
         </div>
+        <p class="muted">Kein Ton? Auf dem iPhone bleibt die Sprachausgabe stumm, wenn das Gerät auf lautlos steht (Stumm-Schalter bzw. Aktionstaste).</p>
       </section>
       <VoiceHelp status={voice.status} />
-      <AudioDiagnose />
 
       <section class="card">
         <h3>Fortschritt sichern</h3>

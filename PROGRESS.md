@@ -20,6 +20,7 @@
 - Milestone 2: spaced repetition (FSRS), session builder, verbs.json, conjugation drill, grammar topic 0
 
 ## Known issues
+- iPhone: speech is silent while the phone is in silent mode (mute switch / Action Button). Hint shown in Settings.
 - The offline service worker can't be tested in the Claude in-app browser (it blocks service workers). Test offline on the iPhone.
 - 4 "moderate" npm audit warnings in build-only tools; they don't ship to the phone.
 
