@@ -406,6 +406,17 @@ header.top h1 {
   background: var(--accent);
 }
 
+.diag {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 0.75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 4em;
+}
+
 .ok { color: var(--good); }
 .error { color: var(--bad); }
 
