@@ -47,14 +47,29 @@ export function findDutchVoice(timeoutMs = 2500): Promise<SpeechSynthesisVoice |
   })
 }
 
-export async function speak(text: string, rate = 0.9): Promise<void> {
+// Keep a reference so iOS doesn't garbage-collect the utterance mid-speech.
+let current: SpeechSynthesisUtterance | null = null
+
+/**
+ * Must stay synchronous: iPhone only allows speech when speak() is called
+ * directly inside the tap handler (no await before it).
+ */
+export function speak(text: string, rate = 0.9): void {
   if (!supported) return
-  const voice = await findDutchVoice()
-  speechSynthesis.cancel()
+  const voice = cached ?? pickDutch(speechSynthesis.getVoices())
+  if (voice) cached = voice
+  // iOS bug: cancel() right before speak() can swallow the new utterance,
+  // so only cancel when something is actually playing.
+  if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel()
+  if (speechSynthesis.paused) speechSynthesis.resume()
   const u = new SpeechSynthesisUtterance(text)
-  u.lang = 'nl-NL'
+  u.lang = voice?.lang.replace('_', '-') ?? 'nl-NL'
   if (voice) u.voice = voice
   u.rate = rate
+  u.onend = u.onerror = () => {
+    if (current === u) current = null
+  }
+  current = u
   speechSynthesis.speak(u)
 }
 
