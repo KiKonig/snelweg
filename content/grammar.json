@@ -1,0 +1,68 @@
+[
+ {
+  "id": "g-praesens",
+  "title": "Präsens: so einfach wie nie",
+  "explanation": "Im Deutschen hat fast jede Person eine eigene Endung (ich arbeite, du arbeitest, er arbeitet …). Im Niederländischen gibt es nur drei Formen:\n• ik → Stamm: ik werk\n• jij / u / hij / zij / het → Stamm + t: jij werkt, hij werkt\n• wij / jullie / zij (Plural) → Infinitiv: wij werken\nEndet der Stamm schon auf -t, kommt kein zweites t dazu: ik zit, hij zit.\n\nDen Stamm findest du, indem du -en abschneidest und die Rechtschreibung anpasst: lopen → loop (offene Silbe: Vokal verdoppeln), leven → leef (v → f), reizen → reis (z → s), bellen → bel (kein Doppelkonsonant am Ende).",
+  "examples": [
+   {"nl": "Ik werk in Utrecht.", "de": "Ich arbeite in Utrecht."},
+   {"nl": "Jij werkt veel.", "de": "Du arbeitest viel."},
+   {"nl": "Wij werken samen.", "de": "Wir arbeiten zusammen."},
+   {"nl": "Ik loop naar huis.", "de": "Ich gehe zu Fuß nach Hause."}
+  ]
+ },
+ {
+  "id": "g-inversie",
+  "title": "Die Falle: werk jij? (ohne -t)",
+  "explanation": "Steht jij/je HINTER dem Verb – in Fragen oder wenn der Satz mit etwas anderem beginnt –, fällt das -t weg:\n• jij werkt → Werk jij morgen?\n• jij woont → Waar woon je?\n• Morgen ga je naar Utrecht.\nDas gilt nur für jij/je! Bei hij, zij, u bleibt das -t: Werkt hij? Woont u hier?\n\nDas ist der klassische Fehler von Deutschsprachigen – im Deutschen bleibt die Endung (Arbeitest du?).",
+  "examples": [
+   {"nl": "Woon jij in Amsterdam?", "de": "Wohnst du in Amsterdam?"},
+   {"nl": "Woont u in Amsterdam?", "de": "Wohnen Sie in Amsterdam?"},
+   {"nl": "Wat drink je?", "de": "Was trinkst du?"},
+   {"nl": "Morgen werk je thuis.", "de": "Morgen arbeitest du zu Hause."}
+  ]
+ },
+ {
+  "id": "g-satzbau",
+  "title": "Satzbau, Fragen und Nebensätze",
+  "explanation": "Gute Nachricht: Der Satzbau ist fast wie im Deutschen.\n• Aussagesatz: Verb an Position 2 (Ik drink koffie. Morgen drink ik thee.)\n• Ja/Nein-Frage: Verb zuerst (Drink je koffie?)\n• W-Frage: wie (wer), wat (was), waar (wo), wanneer (wann), waarom (warum), hoe (wie), hoeveel (wie viel) + Verb (Waar woon je?)\n• Nebensatz mit omdat (weil), dat (dass), als (wenn): Verb ans Ende – wie im Deutschen (… omdat ik moe ben).\n• Modalverb + Infinitiv am Ende: Ik wil morgen gaan.\nAchtung: wie = wer, hoe = wie!",
+  "examples": [
+   {"nl": "Morgen ga ik naar Utrecht.", "de": "Morgen fahre ich nach Utrecht."},
+   {"nl": "Wie is dat?", "de": "Wer ist das?"},
+   {"nl": "Hoe heet je?", "de": "Wie heißt du?"},
+   {"nl": "Ik blijf thuis, omdat ik ziek ben.", "de": "Ich bleibe zu Hause, weil ich krank bin."}
+  ]
+ },
+ {
+  "id": "g-nietgeen",
+  "title": "Verneinung: niet und geen",
+  "explanation": "Genau wie nicht und kein:\n• geen = kein (vor Nomen ohne bestimmten Artikel): Ik heb geen tijd.\n• niet = nicht (alles andere): Ik kom niet. Dat is niet duur.\nPosition von niet: meist am Satzende oder vor dem, was verneint wird – wie im Deutschen.\nAchtung Aussprache: geen klingt wie „chehn“ mit kehligem g.",
+  "examples": [
+   {"nl": "Ik heb geen tijd.", "de": "Ich habe keine Zeit."},
+   {"nl": "Ik begrijp het niet.", "de": "Ich verstehe es nicht."},
+   {"nl": "Hij drinkt geen koffie.", "de": "Er trinkt keinen Kaffee."},
+   {"nl": "Het is niet ver.", "de": "Es ist nicht weit."}
+  ]
+ },
+ {
+  "id": "g-pronomen",
+  "title": "Pronomen: jij, je, u, ze …",
+  "explanation": "Subjekt (betont / unbetont):\nik · jij / je · u · hij · zij / ze · het · wij / we · jullie · zij / ze\n\n• Die unbetonten Formen je, ze, we sind im Alltag die Regel. jij, zij, wij nur bei Betonung.\n• u = Sie (höflich), für Singular UND Plural. Das Verb steht wie bei hij: u werkt.\n• jullie = ihr. Verb im Plural: jullie werken.\n• Objekt: mij/me (mich, mir), jou/je (dich, dir), hem (ihn, ihm), haar (sie, ihr), ons (uns), hen/hun/ze (sie, ihnen).\n• Niederländer duzen schneller als Deutsche – im Laden oft schon je.",
+  "examples": [
+   {"nl": "We gaan morgen.", "de": "Wir gehen morgen."},
+   {"nl": "Ze is mijn zus.", "de": "Sie ist meine Schwester."},
+   {"nl": "Kunt u mij helpen?", "de": "Können Sie mir helfen?"},
+   {"nl": "Ik bel je morgen.", "de": "Ich rufe dich morgen an."}
+  ]
+ },
+ {
+  "id": "g-modaal",
+  "title": "Modalverben: kunnen, willen, moeten, mogen",
+  "explanation": "Wie im Deutschen: Modalverb an Position 2, Infinitiv ans Ende.\n• kunnen = können: ik kan, jij kunt (oder kan), hij kan\n• willen = wollen/möchten: ik wil, jij wilt (oder wil), hij wil\n• moeten = müssen: ik moet, hij moet\n• mogen = dürfen (!): ik mag, hij mag\n\nFalscher Freund: mogen heißt dürfen, nicht mögen. „Mögen“ ist houden van oder graag hebben/doen.\nHöflich bestellen: Ik wil graag … (Ich hätte gern …).",
+  "examples": [
+   {"nl": "Ik kan morgen niet komen.", "de": "Ich kann morgen nicht kommen."},
+   {"nl": "Mag ik hier zitten?", "de": "Darf ich hier sitzen?"},
+   {"nl": "Ik wil graag een koffie.", "de": "Ich hätte gern einen Kaffee."},
+   {"nl": "Je moet dat boek lezen.", "de": "Du musst das Buch lesen."}
+  ]
+ }
+]

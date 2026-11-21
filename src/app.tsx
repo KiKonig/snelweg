@@ -1,5 +1,5 @@
 import { useEffect } from 'preact/hooks'
-import { useRoute, type Route } from './router'
+import { useLoc, type Route } from './router'
 import { SettingsProvider } from './settings'
 import { requestPersistence } from './db'
 import { Home } from './screens/Home'
@@ -19,13 +19,13 @@ const NAV: { route: Route; label: string; icon: string }[] = [
   { route: 'fortschritt', label: 'Fortschritt', icon: 'M4 20V10M10 20V4M16 20v-7M22 20H2' },
 ]
 
-function Screen({ route }: { route: Route }) {
+function Screen({ route, params }: { route: Route; params: string[] }) {
   switch (route) {
-    case 'sitzung': return <Session />
+    case 'sitzung': return <Session params={params} />
     case 'zusammenfassung': return <Summary />
     case 'woerterbuch': return <Dictionary />
-    case 'sprechen': return <Speak />
-    case 'bibliothek': return <Library />
+    case 'sprechen': return <Speak params={params} />
+    case 'bibliothek': return <Library params={params} />
     case 'fortschritt': return <Progress />
     case 'einstellungen': return <SettingsScreen />
     default: return <Home />
@@ -33,7 +33,7 @@ function Screen({ route }: { route: Route }) {
 }
 
 export function App() {
-  const route = useRoute()
+  const { route, params } = useLoc()
   useEffect(() => {
     requestPersistence()
   }, [])
@@ -41,7 +41,7 @@ export function App() {
   return (
     <SettingsProvider>
       <main class={inSession ? 'screen no-nav' : 'screen'}>
-        <Screen route={route} />
+        <Screen route={route} params={params} />
       </main>
       {!inSession && (
         <nav class="bottom-nav" aria-label="Hauptnavigation">

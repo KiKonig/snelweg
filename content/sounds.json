@@ -1,0 +1,17 @@
+[
+ {"id":"s-g","spelling":"g / ch","german":"Wie das deutsche „ach“, aber weiter hinten im Hals – auch am Wortanfang. Nie wie deutsches g!","examples":["goed","gaan","lachen","acht","Groningen"]},
+ {"id":"s-sch","spelling":"sch","german":"s + ch (wie in „ach“), NICHT wie deutsches sch. „Schiphol“ = s-chiphol.","examples":["school","schrijven","Scheveningen","schoen"]},
+ {"id":"s-ij","spelling":"ij / ei","german":"Gleicher Laut für beide Schreibungen: zwischen deutschem „ei“ und „äi“, mit offenerem Anfang.","examples":["tijd","mijn","trein","klein","wijn"]},
+ {"id":"s-ui","spelling":"ui","german":"Kein deutscher Laut: Mund wie für „ö“ öffnen und zu „ü“ gleiten – etwa „öü“.","examples":["huis","uit","bruin","tuin","duizend"]},
+ {"id":"s-oe","spelling":"oe","german":"= deutsches u (wie in „gut“).","examples":["boek","goed","moeder","doen"]},
+ {"id":"s-u","spelling":"u (kurz)","german":"Kurzer Laut zwischen ö und ü, ungespannt.","examples":["bus","dus","kunnen","mus"]},
+ {"id":"s-uu","spelling":"uu / u (lang)","german":"≈ deutsches langes ü.","examples":["muur","uur","minuut","u"]},
+ {"id":"s-eu","spelling":"eu","german":"≈ deutsches langes ö.","examples":["deur","leuk","neus","jeuk"]},
+ {"id":"s-ie","spelling":"ie","german":"= deutsches ie, aber kürzer.","examples":["zien","bier","fiets","drie"]},
+ {"id":"s-w","spelling":"w","german":"Zwischen deutschem w und englischem w – die Lippen berühren sich kaum.","examples":["water","wonen","werk","twee"]},
+ {"id":"s-en","spelling":"-en (am Wortende)","german":"Wird im Alltag meist als „-e“ gesprochen, das n fällt weg.","examples":["maken","lopen","kinderen","eten"]},
+ {"id":"s-v","spelling":"v / f","german":"v klingt fast wie f, aber weicher. Viele Niederländer sprechen beide gleich.","examples":["vis","vader","fiets","vier"]},
+ {"id":"s-z","spelling":"z / s","german":"z ist ein stimmhaftes s (wie in deutsch „Sonne“), s ist immer stimmlos (wie in „Bus“).","examples":["zon","zeven","zes","soep"]},
+ {"id":"s-aa","spelling":"aa / a","german":"aa = langes a (wie „Bahn“), a = kurzes a (wie „Mann“). Die Länge verändert die Bedeutung: man – maan.","examples":["man","maan","tak","taak"]},
+ {"id":"s-ou","spelling":"ou / au","german":"Gleicher Laut: wie deutsches „au“, aber mit offenerem Anfang.","examples":["oud","koud","blauw","vrouw"]}
+]

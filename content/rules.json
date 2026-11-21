@@ -1,0 +1,17 @@
+[
+ {"id":"r-z-t","name":"z → t","explanation":"Deutsches z (ts) wird zu t.","reliability":"high","pairs":[["Zeit","tijd"],["zehn","tien"],["Zunge","tong"],["zwei","twee"],["Herz","hart"]]},
+ {"id":"r-pf-p","name":"pf → p","explanation":"Deutsches pf wird zu p.","reliability":"high","pairs":[["Pfeffer","peper"],["Apfel","appel"],["Pfund","pond"],["Pfeife","pijp"]]},
+ {"id":"r-f-p","name":"f / ff nach Vokal → p","explanation":"Nach einem Vokal wird f/ff oft zu p.","reliability":"medium","pairs":[["schlafen","slapen"],["offen","open"],["Schiff","schip"],["helfen","helpen"]]},
+ {"id":"r-ch-k","name":"ch → k","explanation":"Deutsches ch (nach Vokal) wird oft zu k.","reliability":"medium","pairs":[["machen","maken"],["ich","ik"],["Woche","week"],["brechen","breken"]]},
+ {"id":"r-s-t","name":"ss / ß / s → t","explanation":"Wo das Deutsche ein s aus altem t hat, bleibt im Niederländischen das t.","reliability":"medium","pairs":[["Wasser","water"],["essen","eten"],["besser","beter"],["das","dat"],["was","wat"],["groß","groot"]]},
+ {"id":"r-t-d","name":"t → d (am Anfang)","explanation":"Deutsches t am Wortanfang wird oft zu d.","reliability":"high","pairs":[["Tag","dag"],["Tochter","dochter"],["tun","doen"],["Tür","deur"],["trinken","drinken"]]},
+ {"id":"r-f-v","name":"f → v (am Anfang)","explanation":"Deutsches f am Wortanfang wird oft zu v.","reliability":"medium","pairs":[["Feuer","vuur"],["finden","vinden"],["fallen","vallen"],["Fisch","vis"]]},
+ {"id":"r-s-z","name":"s → z (am Anfang)","explanation":"Deutsches s am Wortanfang (stimmhaft) wird zu z.","reliability":"high","pairs":[["Sonne","zon"],["sehen","zien"],["sagen","zeggen"],["sieben","zeven"]]},
+ {"id":"r-ei-ij","name":"ei → ij","explanation":"Deutsches ei wird oft zu ij (gleicher Laut wie ei).","reliability":"medium","pairs":[["Zeit","tijd"],["mein","mijn"],["Eis","ijs"],["schreiben","schrijven"],["bleiben","blijven"]]},
+ {"id":"r-ei-ee","name":"ei → ee","explanation":"In anderen Wörtern wird deutsches ei zu ee.","reliability":"medium","pairs":[["Stein","steen"],["ein","een"],["Bein","been"],["allein","alleen"],["Fleisch","vlees"]]},
+ {"id":"r-au-ui","name":"au → ui","explanation":"Deutsches au wird oft zu ui.","reliability":"medium","pairs":[["Haus","huis"],["braun","bruin"],["Maus","muis"],["Bauch","buik"]]},
+ {"id":"r-au-oo","name":"au → oo","explanation":"In anderen Wörtern wird deutsches au zu oo.","reliability":"medium","pairs":[["Baum","boom"],["auch","ook"],["Auge","oog"],["laufen","lopen"]]},
+ {"id":"r-u-oe","name":"u → oe","explanation":"Deutsches langes u wird oft zu oe (gleicher Laut).","reliability":"high","pairs":[["Buch","boek"],["gut","goed"],["Fuß","voet"],["Blut","bloed"]]},
+ {"id":"r-schl","name":"schl / schw → sl / zw","explanation":"schl → sl, schw → zw. schr bleibt schr (aber s-ch gesprochen).","reliability":"high","pairs":[["schlafen","slapen"],["schlecht","slecht"],["schwarz","zwart"],["schreiben","schrijven"]]},
+ {"id":"r-ung-ing","name":"-ung → -ing","explanation":"Die Endung -ung wird zu -ing.","reliability":"high","pairs":[["Übung","oefening"],["Wohnung","woning"],["Meinung","mening"]]}
+]

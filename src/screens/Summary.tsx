@@ -1,4 +1,6 @@
-import { Header, Placeholder } from '../components'
+import { Header } from '../components'
+import { MISTAKE_LABEL } from '../check'
+import { href } from '../router'
 import type { SessionResult } from './Session'
 
 export function Summary() {
@@ -8,34 +10,46 @@ export function Summary() {
   } catch {
     r = null
   }
-  const pct = r && r.total ? Math.round(((r.known + r.almost * 0.5) / r.total) * 100) : 0
+  const pct = r && r.total ? Math.round((r.correct / r.total) * 100) : 0
+  const top = r ? Object.entries(r.mistakes ?? {}).sort((a, b) => b[1] - a[1])[0] : undefined
 
   return (
     <>
-      <Header title="Zusammenfassung" />
-      {r ? (
+      <Header title="Gut gemacht!" />
+      {r && r.total > 0 ? (
         <>
           <div class="stats">
             <div>
               <strong>{pct}%</strong>
-              <span>Genauigkeit</span>
+              <span>richtig</span>
             </div>
             <div>
-              <strong>{r.known}</strong>
-              <span>gewusst</span>
+              <strong>{r.newItems}</strong>
+              <span>neu gelernt</span>
             </div>
             <div>
-              <strong>{r.missed}</strong>
-              <span>nicht gewusst</span>
+              <strong>{r.minutes}</strong>
+              <span>Minuten</span>
             </div>
           </div>
-          <Placeholder milestone={5}>
-            <p>Hier erscheinen neu gelernte Einträge und dein häufigster Fehlertyp – mit einem Knopf, um ihn sofort zu üben.</p>
-          </Placeholder>
+          {top && (
+            <section class="card">
+              <p class="eyebrow">Häufigster Fehler</p>
+              <p>
+                {MISTAKE_LABEL[top[0]] ?? top[0]} ({top[1]}×)
+              </p>
+              <a class="btn" href={href('sitzung', 'fehler')}>
+                Fehler jetzt üben
+              </a>
+            </section>
+          )}
         </>
       ) : (
-        <p class="muted">Noch keine Sitzung abgeschlossen.</p>
+        <p class="muted">Diese Runde war kurz – beim nächsten Mal geht’s weiter, wo du aufgehört hast.</p>
       )}
+      <a href={href('sitzung', 'daily', '10')} class="btn big">
+        Noch eine Runde (10 Min.)
+      </a>
       <a href="#/home" class="btn primary big">
         Fertig
       </a>

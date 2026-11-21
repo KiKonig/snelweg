@@ -22,9 +22,11 @@ export interface Stats {
 
 class SnelwegDB extends Dexie {
   kv!: Table<KV, string>
+  cards!: Table<import('./srs').CardRow, string>
   constructor() {
     super('snelweg')
     this.version(1).stores({ kv: 'key' })
+    this.version(2).stores({ kv: 'key', cards: 'id, due, kind' })
   }
 }
 
@@ -45,6 +47,18 @@ export const getStats = () => getKV('stats', DEFAULT_STATS)
 export function localDate(d = new Date()): string {
   const p = (n: number) => String(n).padStart(2, '0')
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`
+}
+
+/** Minutes practised per day (for the progress view). */
+export async function addMinutes(min: number): Promise<void> {
+  const key = 'minutes'
+  const m = ((await db.kv.get(key))?.value as Record<string, number>) ?? {}
+  m[localDate()] = (m[localDate()] ?? 0) + min
+  await db.kv.put({ key, value: m })
+}
+
+export async function minutesByDay(): Promise<Record<string, number>> {
+  return ((await db.kv.get('minutes'))?.value as Record<string, number>) ?? {}
 }
 
 /** Called when a daily session is finished: updates streak and counters. */

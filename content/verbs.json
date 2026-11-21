@@ -1,0 +1,2112 @@
+[
+ {
+  "id": "zijn",
+  "rank": 1,
+  "infinitive": "zijn",
+  "german": "sein",
+  "irregular": true,
+  "present": {
+   "ik": "ben",
+   "jij": "bent",
+   "u": "bent",
+   "hij": "is",
+   "zij_sg": "is",
+   "het": "is",
+   "wij": "zijn",
+   "jullie": "zijn",
+   "zij_pl": "zijn",
+   "q_jij": "ben"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "was",
+   "pl": "waren"
+  },
+  "participle": "geweest",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [ben] moe.",
+    "de": "Ich bin müde."
+   },
+   {
+    "nl": "Waar [zijn] jullie?",
+    "de": "Wo seid ihr?"
+   }
+  ]
+ },
+ {
+  "id": "hebben",
+  "rank": 2,
+  "infinitive": "hebben",
+  "german": "haben",
+  "irregular": true,
+  "present": {
+   "ik": "heb",
+   "jij": "hebt",
+   "u": "hebt",
+   "hij": "heeft",
+   "zij_sg": "heeft",
+   "het": "heeft",
+   "wij": "hebben",
+   "jullie": "hebben",
+   "zij_pl": "hebben",
+   "q_jij": "heb"
+  },
+  "accepted": {
+   "u": [
+    "heeft"
+   ]
+  },
+  "past": {
+   "sg": "had",
+   "pl": "hadden"
+  },
+  "participle": "gehad",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [heb] een vraag.",
+    "de": "Ich habe eine Frage."
+   },
+   {
+    "nl": "[Heb] jij tijd?",
+    "de": "Hast du Zeit?"
+   }
+  ]
+ },
+ {
+  "id": "gaan",
+  "rank": 3,
+  "infinitive": "gaan",
+  "german": "gehen, fahren",
+  "irregular": true,
+  "present": {
+   "ik": "ga",
+   "jij": "gaat",
+   "u": "gaat",
+   "hij": "gaat",
+   "zij_sg": "gaat",
+   "het": "gaat",
+   "wij": "gaan",
+   "jullie": "gaan",
+   "zij_pl": "gaan",
+   "q_jij": "ga"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "ging",
+   "pl": "gingen"
+  },
+  "participle": "gegaan",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wij [gaan] morgen naar Utrecht.",
+    "de": "Wir fahren morgen nach Utrecht."
+   },
+   {
+    "nl": "Hoe [gaat] het?",
+    "de": "Wie geht’s?"
+   }
+  ]
+ },
+ {
+  "id": "komen",
+  "rank": 4,
+  "infinitive": "komen",
+  "german": "kommen",
+  "irregular": true,
+  "present": {
+   "ik": "kom",
+   "jij": "komt",
+   "u": "komt",
+   "hij": "komt",
+   "zij_sg": "komt",
+   "het": "komt",
+   "wij": "komen",
+   "jullie": "komen",
+   "zij_pl": "komen",
+   "q_jij": "kom"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "kwam",
+   "pl": "kwamen"
+  },
+  "participle": "gekomen",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Waar [kom] je vandaan?",
+    "de": "Woher kommst du?"
+   },
+   {
+    "nl": "Hij [komt] om acht uur.",
+    "de": "Er kommt um acht Uhr."
+   }
+  ]
+ },
+ {
+  "id": "heten",
+  "rank": 5,
+  "infinitive": "heten",
+  "german": "heißen",
+  "irregular": false,
+  "present": {
+   "ik": "heet",
+   "jij": "heet",
+   "u": "heet",
+   "hij": "heet",
+   "zij_sg": "heet",
+   "het": "heet",
+   "wij": "heten",
+   "jullie": "heten",
+   "zij_pl": "heten",
+   "q_jij": "heet"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "heette",
+   "pl": "heetten"
+  },
+  "participle": "geheten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [heet] Anna.",
+    "de": "Ich heiße Anna."
+   },
+   {
+    "nl": "Hoe [heet] je?",
+    "de": "Wie heißt du?"
+   }
+  ]
+ },
+ {
+  "id": "wonen",
+  "rank": 6,
+  "infinitive": "wonen",
+  "german": "wohnen",
+  "irregular": false,
+  "present": {
+   "ik": "woon",
+   "jij": "woont",
+   "u": "woont",
+   "hij": "woont",
+   "zij_sg": "woont",
+   "het": "woont",
+   "wij": "wonen",
+   "jullie": "wonen",
+   "zij_pl": "wonen",
+   "q_jij": "woon"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "woonde",
+   "pl": "woonden"
+  },
+  "participle": "gewoond",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [woon] in Amsterdam.",
+    "de": "Ich wohne in Amsterdam."
+   },
+   {
+    "nl": "Waar [woon] je?",
+    "de": "Wo wohnst du?"
+   }
+  ]
+ },
+ {
+  "id": "werken",
+  "rank": 7,
+  "infinitive": "werken",
+  "german": "arbeiten",
+  "irregular": false,
+  "present": {
+   "ik": "werk",
+   "jij": "werkt",
+   "u": "werkt",
+   "hij": "werkt",
+   "zij_sg": "werkt",
+   "het": "werkt",
+   "wij": "werken",
+   "jullie": "werken",
+   "zij_pl": "werken",
+   "q_jij": "werk"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "werkte",
+   "pl": "werkten"
+  },
+  "participle": "gewerkt",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [werk] in een ziekenhuis.",
+    "de": "Ich arbeite in einem Krankenhaus."
+   },
+   {
+    "nl": "Waar [werk] jij?",
+    "de": "Wo arbeitest du?"
+   }
+  ]
+ },
+ {
+  "id": "doen",
+  "rank": 8,
+  "infinitive": "doen",
+  "german": "tun, machen",
+  "irregular": true,
+  "present": {
+   "ik": "doe",
+   "jij": "doet",
+   "u": "doet",
+   "hij": "doet",
+   "zij_sg": "doet",
+   "het": "doet",
+   "wij": "doen",
+   "jullie": "doen",
+   "zij_pl": "doen",
+   "q_jij": "doe"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "deed",
+   "pl": "deden"
+  },
+  "participle": "gedaan",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wat [doe] je?",
+    "de": "Was machst du?"
+   },
+   {
+    "nl": "Wat [doet] u voor werk?",
+    "de": "Was machen Sie beruflich?"
+   }
+  ]
+ },
+ {
+  "id": "kunnen",
+  "rank": 9,
+  "infinitive": "kunnen",
+  "german": "können",
+  "irregular": true,
+  "present": {
+   "ik": "kan",
+   "jij": "kunt",
+   "u": "kunt",
+   "hij": "kan",
+   "zij_sg": "kan",
+   "het": "kan",
+   "wij": "kunnen",
+   "jullie": "kunnen",
+   "zij_pl": "kunnen",
+   "q_jij": "kun"
+  },
+  "accepted": {
+   "jij": [
+    "kan"
+   ],
+   "u": [
+    "kan"
+   ],
+   "q_jij": [
+    "kan"
+   ]
+  },
+  "past": {
+   "sg": "kon",
+   "pl": "konden"
+  },
+  "participle": "gekund",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "[Kunt] u dat herhalen?",
+    "de": "Können Sie das wiederholen?"
+   },
+   {
+    "nl": "Ik [kan] niet komen.",
+    "de": "Ich kann nicht kommen."
+   }
+  ]
+ },
+ {
+  "id": "willen",
+  "rank": 10,
+  "infinitive": "willen",
+  "german": "wollen, möchten",
+  "irregular": true,
+  "present": {
+   "ik": "wil",
+   "jij": "wilt",
+   "u": "wilt",
+   "hij": "wil",
+   "zij_sg": "wil",
+   "het": "wil",
+   "wij": "willen",
+   "jullie": "willen",
+   "zij_pl": "willen",
+   "q_jij": "wil"
+  },
+  "accepted": {
+   "jij": [
+    "wil"
+   ],
+   "u": [
+    "wil"
+   ]
+  },
+  "past": {
+   "sg": "wilde",
+   "pl": "wilden"
+  },
+  "participle": "gewild",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [wil] graag een koffie.",
+    "de": "Ich möchte gern einen Kaffee."
+   },
+   {
+    "nl": "[Wil] je iets drinken?",
+    "de": "Möchtest du etwas trinken?"
+   }
+  ]
+ },
+ {
+  "id": "moeten",
+  "rank": 11,
+  "infinitive": "moeten",
+  "german": "müssen",
+  "irregular": true,
+  "present": {
+   "ik": "moet",
+   "jij": "moet",
+   "u": "moet",
+   "hij": "moet",
+   "zij_sg": "moet",
+   "het": "moet",
+   "wij": "moeten",
+   "jullie": "moeten",
+   "zij_pl": "moeten",
+   "q_jij": "moet"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "moest",
+   "pl": "moesten"
+  },
+  "participle": "gemoeten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [moet] nu gaan.",
+    "de": "Ich muss jetzt gehen."
+   },
+   {
+    "nl": "Je [moet] dit boek lezen.",
+    "de": "Du musst dieses Buch lesen."
+   }
+  ]
+ },
+ {
+  "id": "mogen",
+  "rank": 12,
+  "infinitive": "mogen",
+  "german": "dürfen",
+  "irregular": true,
+  "present": {
+   "ik": "mag",
+   "jij": "mag",
+   "u": "mag",
+   "hij": "mag",
+   "zij_sg": "mag",
+   "het": "mag",
+   "wij": "mogen",
+   "jullie": "mogen",
+   "zij_pl": "mogen",
+   "q_jij": "mag"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "mocht",
+   "pl": "mochten"
+  },
+  "participle": "gemogen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "[Mag] ik hier zitten?",
+    "de": "Darf ich hier sitzen?"
+   },
+   {
+    "nl": "Je [mag] hier niet roken.",
+    "de": "Du darfst hier nicht rauchen."
+   }
+  ]
+ },
+ {
+  "id": "zullen",
+  "rank": 13,
+  "infinitive": "zullen",
+  "german": "werden (Zukunft), sollen (Vorschlag)",
+  "irregular": true,
+  "present": {
+   "ik": "zal",
+   "jij": "zult",
+   "u": "zult",
+   "hij": "zal",
+   "zij_sg": "zal",
+   "het": "zal",
+   "wij": "zullen",
+   "jullie": "zullen",
+   "zij_pl": "zullen",
+   "q_jij": "zul"
+  },
+  "accepted": {
+   "jij": [
+    "zal"
+   ],
+   "u": [
+    "zal"
+   ],
+   "q_jij": [
+    "zal"
+   ]
+  },
+  "past": {
+   "sg": "zou",
+   "pl": "zouden"
+  },
+  "participle": null,
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [zal] het proberen.",
+    "de": "Ich werde es versuchen."
+   },
+   {
+    "nl": "[Zullen] we gaan?",
+    "de": "Sollen wir gehen?"
+   }
+  ]
+ },
+ {
+  "id": "worden",
+  "rank": 14,
+  "infinitive": "worden",
+  "german": "werden",
+  "irregular": true,
+  "present": {
+   "ik": "word",
+   "jij": "wordt",
+   "u": "wordt",
+   "hij": "wordt",
+   "zij_sg": "wordt",
+   "het": "wordt",
+   "wij": "worden",
+   "jullie": "worden",
+   "zij_pl": "worden",
+   "q_jij": "word"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "werd",
+   "pl": "werden"
+  },
+  "participle": "geworden",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Het [wordt] koud.",
+    "de": "Es wird kalt."
+   },
+   {
+    "nl": "Ik [word] morgen dertig.",
+    "de": "Ich werde morgen dreißig."
+   }
+  ]
+ },
+ {
+  "id": "weten",
+  "rank": 15,
+  "infinitive": "weten",
+  "german": "wissen",
+  "irregular": true,
+  "present": {
+   "ik": "weet",
+   "jij": "weet",
+   "u": "weet",
+   "hij": "weet",
+   "zij_sg": "weet",
+   "het": "weet",
+   "wij": "weten",
+   "jullie": "weten",
+   "zij_pl": "weten",
+   "q_jij": "weet"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "wist",
+   "pl": "wisten"
+  },
+  "participle": "geweten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [weet] het niet.",
+    "de": "Ich weiß es nicht."
+   },
+   {
+    "nl": "[Weet] jij waar het station is?",
+    "de": "Weißt du, wo der Bahnhof ist?"
+   }
+  ]
+ },
+ {
+  "id": "zeggen",
+  "rank": 16,
+  "infinitive": "zeggen",
+  "german": "sagen",
+  "irregular": true,
+  "present": {
+   "ik": "zeg",
+   "jij": "zegt",
+   "u": "zegt",
+   "hij": "zegt",
+   "zij_sg": "zegt",
+   "het": "zegt",
+   "wij": "zeggen",
+   "jullie": "zeggen",
+   "zij_pl": "zeggen",
+   "q_jij": "zeg"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "zei",
+   "pl": "zeiden"
+  },
+  "participle": "gezegd",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wat [zeg] je?",
+    "de": "Was sagst du?"
+   },
+   {
+    "nl": "Hoe [zeg] je dat in het Nederlands?",
+    "de": "Wie sagt man das auf Niederländisch?"
+   }
+  ]
+ },
+ {
+  "id": "zien",
+  "rank": 17,
+  "infinitive": "zien",
+  "german": "sehen",
+  "irregular": true,
+  "present": {
+   "ik": "zie",
+   "jij": "ziet",
+   "u": "ziet",
+   "hij": "ziet",
+   "zij_sg": "ziet",
+   "het": "ziet",
+   "wij": "zien",
+   "jullie": "zien",
+   "zij_pl": "zien",
+   "q_jij": "zie"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "zag",
+   "pl": "zagen"
+  },
+  "participle": "gezien",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [zie] je morgen.",
+    "de": "Wir sehen uns morgen."
+   },
+   {
+    "nl": "[Zie] jij het station?",
+    "de": "Siehst du den Bahnhof?"
+   }
+  ]
+ },
+ {
+  "id": "krijgen",
+  "rank": 18,
+  "infinitive": "krijgen",
+  "german": "bekommen",
+  "irregular": true,
+  "present": {
+   "ik": "krijg",
+   "jij": "krijgt",
+   "u": "krijgt",
+   "hij": "krijgt",
+   "zij_sg": "krijgt",
+   "het": "krijgt",
+   "wij": "krijgen",
+   "jullie": "krijgen",
+   "zij_pl": "krijgen",
+   "q_jij": "krijg"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "kreeg",
+   "pl": "kregen"
+  },
+  "participle": "gekregen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [krijg] een koffie, alstublieft.",
+    "de": "Ich bekomme einen Kaffee, bitte."
+   },
+   {
+    "nl": "Wat [krijgt] u?",
+    "de": "Was bekommen Sie?"
+   }
+  ]
+ },
+ {
+  "id": "staan",
+  "rank": 19,
+  "infinitive": "staan",
+  "german": "stehen",
+  "irregular": true,
+  "present": {
+   "ik": "sta",
+   "jij": "staat",
+   "u": "staat",
+   "hij": "staat",
+   "zij_sg": "staat",
+   "het": "staat",
+   "wij": "staan",
+   "jullie": "staan",
+   "zij_pl": "staan",
+   "q_jij": "sta"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "stond",
+   "pl": "stonden"
+  },
+  "participle": "gestaan",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "De koffie [staat] op tafel.",
+    "de": "Der Kaffee steht auf dem Tisch."
+   },
+   {
+    "nl": "Ik [sta] al tien minuten te wachten.",
+    "de": "Ich warte schon seit zehn Minuten."
+   }
+  ]
+ },
+ {
+  "id": "slaan",
+  "rank": 20,
+  "infinitive": "slaan",
+  "german": "schlagen",
+  "irregular": true,
+  "present": {
+   "ik": "sla",
+   "jij": "slaat",
+   "u": "slaat",
+   "hij": "slaat",
+   "zij_sg": "slaat",
+   "het": "slaat",
+   "wij": "slaan",
+   "jullie": "slaan",
+   "zij_pl": "slaan",
+   "q_jij": "sla"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "sloeg",
+   "pl": "sloegen"
+  },
+  "participle": "geslagen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Hij [slaat] de deur dicht.",
+    "de": "Er schlägt die Tür zu."
+   },
+   {
+    "nl": "De klok [slaat] twaalf.",
+    "de": "Die Uhr schlägt zwölf."
+   }
+  ]
+ },
+ {
+  "id": "spreken",
+  "rank": 21,
+  "infinitive": "spreken",
+  "german": "sprechen",
+  "irregular": false,
+  "present": {
+   "ik": "spreek",
+   "jij": "spreekt",
+   "u": "spreekt",
+   "hij": "spreekt",
+   "zij_sg": "spreekt",
+   "het": "spreekt",
+   "wij": "spreken",
+   "jullie": "spreken",
+   "zij_pl": "spreken",
+   "q_jij": "spreek"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "sprak",
+   "pl": "spraken"
+  },
+  "participle": "gesproken",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "[Spreekt] u Engels?",
+    "de": "Sprechen Sie Englisch?"
+   },
+   {
+    "nl": "Ik [spreek] een beetje Nederlands.",
+    "de": "Ich spreche ein bisschen Niederländisch."
+   }
+  ]
+ },
+ {
+  "id": "leren",
+  "rank": 22,
+  "infinitive": "leren",
+  "german": "lernen",
+  "irregular": false,
+  "present": {
+   "ik": "leer",
+   "jij": "leert",
+   "u": "leert",
+   "hij": "leert",
+   "zij_sg": "leert",
+   "het": "leert",
+   "wij": "leren",
+   "jullie": "leren",
+   "zij_pl": "leren",
+   "q_jij": "leer"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "leerde",
+   "pl": "leerden"
+  },
+  "participle": "geleerd",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [leer] Nederlands.",
+    "de": "Ich lerne Niederländisch."
+   },
+   {
+    "nl": "Hij [leert] snel.",
+    "de": "Er lernt schnell."
+   }
+  ]
+ },
+ {
+  "id": "begrijpen",
+  "rank": 23,
+  "infinitive": "begrijpen",
+  "german": "verstehen",
+  "irregular": false,
+  "present": {
+   "ik": "begrijp",
+   "jij": "begrijpt",
+   "u": "begrijpt",
+   "hij": "begrijpt",
+   "zij_sg": "begrijpt",
+   "het": "begrijpt",
+   "wij": "begrijpen",
+   "jullie": "begrijpen",
+   "zij_pl": "begrijpen",
+   "q_jij": "begrijp"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "begreep",
+   "pl": "begrepen"
+  },
+  "participle": "begrepen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [begrijp] het niet.",
+    "de": "Ich verstehe es nicht."
+   },
+   {
+    "nl": "[Begrijp] je me?",
+    "de": "Verstehst du mich?"
+   }
+  ]
+ },
+ {
+  "id": "maken",
+  "rank": 24,
+  "infinitive": "maken",
+  "german": "machen",
+  "irregular": false,
+  "present": {
+   "ik": "maak",
+   "jij": "maakt",
+   "u": "maakt",
+   "hij": "maakt",
+   "zij_sg": "maakt",
+   "het": "maakt",
+   "wij": "maken",
+   "jullie": "maken",
+   "zij_pl": "maken",
+   "q_jij": "maak"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "maakte",
+   "pl": "maakten"
+  },
+  "participle": "gemaakt",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [maak] een foto.",
+    "de": "Ich mache ein Foto."
+   },
+   {
+    "nl": "Wat [maak] je vanavond?",
+    "de": "Was kochst/machst du heute Abend?"
+   }
+  ]
+ },
+ {
+  "id": "geven",
+  "rank": 25,
+  "infinitive": "geven",
+  "german": "geben",
+  "irregular": false,
+  "present": {
+   "ik": "geef",
+   "jij": "geeft",
+   "u": "geeft",
+   "hij": "geeft",
+   "zij_sg": "geeft",
+   "het": "geeft",
+   "wij": "geven",
+   "jullie": "geven",
+   "zij_pl": "geven",
+   "q_jij": "geef"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "gaf",
+   "pl": "gaven"
+  },
+  "participle": "gegeven",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "[Geef] je me het zout?",
+    "de": "Gibst du mir das Salz?"
+   },
+   {
+    "nl": "Zij [geeft] hem een cadeau.",
+    "de": "Sie gibt ihm ein Geschenk."
+   }
+  ]
+ },
+ {
+  "id": "vinden",
+  "rank": 26,
+  "infinitive": "vinden",
+  "german": "finden",
+  "irregular": false,
+  "present": {
+   "ik": "vind",
+   "jij": "vindt",
+   "u": "vindt",
+   "hij": "vindt",
+   "zij_sg": "vindt",
+   "het": "vindt",
+   "wij": "vinden",
+   "jullie": "vinden",
+   "zij_pl": "vinden",
+   "q_jij": "vind"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "vond",
+   "pl": "vonden"
+  },
+  "participle": "gevonden",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [vind] het leuk.",
+    "de": "Ich finde es schön."
+   },
+   {
+    "nl": "[Vind] je dat ook?",
+    "de": "Findest du das auch?"
+   }
+  ]
+ },
+ {
+  "id": "nemen",
+  "rank": 27,
+  "infinitive": "nemen",
+  "german": "nehmen",
+  "irregular": false,
+  "present": {
+   "ik": "neem",
+   "jij": "neemt",
+   "u": "neemt",
+   "hij": "neemt",
+   "zij_sg": "neemt",
+   "het": "neemt",
+   "wij": "nemen",
+   "jullie": "nemen",
+   "zij_pl": "nemen",
+   "q_jij": "neem"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "nam",
+   "pl": "namen"
+  },
+  "participle": "genomen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [neem] de trein.",
+    "de": "Ich nehme den Zug."
+   },
+   {
+    "nl": "Wat [neemt] u?",
+    "de": "Was nehmen Sie?"
+   }
+  ]
+ },
+ {
+  "id": "denken",
+  "rank": 28,
+  "infinitive": "denken",
+  "german": "denken, glauben",
+  "irregular": false,
+  "present": {
+   "ik": "denk",
+   "jij": "denkt",
+   "u": "denkt",
+   "hij": "denkt",
+   "zij_sg": "denkt",
+   "het": "denkt",
+   "wij": "denken",
+   "jullie": "denken",
+   "zij_pl": "denken",
+   "q_jij": "denk"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "dacht",
+   "pl": "dachten"
+  },
+  "participle": "gedacht",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [denk] het wel.",
+    "de": "Ich glaube schon."
+   },
+   {
+    "nl": "Wat [denk] jij?",
+    "de": "Was denkst du?"
+   }
+  ]
+ },
+ {
+  "id": "houden",
+  "rank": 29,
+  "infinitive": "houden",
+  "german": "halten; houden van = lieben, mögen",
+  "irregular": false,
+  "present": {
+   "ik": "houd",
+   "jij": "houdt",
+   "u": "houdt",
+   "hij": "houdt",
+   "zij_sg": "houdt",
+   "het": "houdt",
+   "wij": "houden",
+   "jullie": "houden",
+   "zij_pl": "houden",
+   "q_jij": "houd"
+  },
+  "accepted": {
+   "ik": [
+    "hou"
+   ],
+   "q_jij": [
+    "hou"
+   ]
+  },
+  "past": {
+   "sg": "hield",
+   "pl": "hielden"
+  },
+  "participle": "gehouden",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [hou] van koffie.",
+    "de": "Ich liebe Kaffee."
+   },
+   {
+    "nl": "Zij [houdt] van muziek.",
+    "de": "Sie liebt Musik."
+   }
+  ]
+ },
+ {
+  "id": "laten",
+  "rank": 30,
+  "infinitive": "laten",
+  "german": "lassen",
+  "irregular": false,
+  "present": {
+   "ik": "laat",
+   "jij": "laat",
+   "u": "laat",
+   "hij": "laat",
+   "zij_sg": "laat",
+   "het": "laat",
+   "wij": "laten",
+   "jullie": "laten",
+   "zij_pl": "laten",
+   "q_jij": "laat"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "liet",
+   "pl": "lieten"
+  },
+  "participle": "gelaten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [laat] het je zien.",
+    "de": "Ich zeige es dir."
+   },
+   {
+    "nl": "Hij [laat] de hond uit.",
+    "de": "Er führt den Hund aus."
+   }
+  ]
+ },
+ {
+  "id": "liggen",
+  "rank": 31,
+  "infinitive": "liggen",
+  "german": "liegen",
+  "irregular": false,
+  "present": {
+   "ik": "lig",
+   "jij": "ligt",
+   "u": "ligt",
+   "hij": "ligt",
+   "zij_sg": "ligt",
+   "het": "ligt",
+   "wij": "liggen",
+   "jullie": "liggen",
+   "zij_pl": "liggen",
+   "q_jij": "lig"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "lag",
+   "pl": "lagen"
+  },
+  "participle": "gelegen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Het boek [ligt] op tafel.",
+    "de": "Das Buch liegt auf dem Tisch."
+   },
+   {
+    "nl": "Utrecht [ligt] in het midden van het land.",
+    "de": "Utrecht liegt in der Mitte des Landes."
+   }
+  ]
+ },
+ {
+  "id": "zitten",
+  "rank": 32,
+  "infinitive": "zitten",
+  "german": "sitzen",
+  "irregular": false,
+  "present": {
+   "ik": "zit",
+   "jij": "zit",
+   "u": "zit",
+   "hij": "zit",
+   "zij_sg": "zit",
+   "het": "zit",
+   "wij": "zitten",
+   "jullie": "zitten",
+   "zij_pl": "zitten",
+   "q_jij": "zit"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "zat",
+   "pl": "zaten"
+  },
+  "participle": "gezeten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [zit] in de trein.",
+    "de": "Ich sitze im Zug."
+   },
+   {
+    "nl": "Waar [zit] je?",
+    "de": "Wo bist du gerade?"
+   }
+  ]
+ },
+ {
+  "id": "lopen",
+  "rank": 33,
+  "infinitive": "lopen",
+  "german": "gehen (zu Fuß), laufen",
+  "irregular": false,
+  "present": {
+   "ik": "loop",
+   "jij": "loopt",
+   "u": "loopt",
+   "hij": "loopt",
+   "zij_sg": "loopt",
+   "het": "loopt",
+   "wij": "lopen",
+   "jullie": "lopen",
+   "zij_pl": "lopen",
+   "q_jij": "loop"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "liep",
+   "pl": "liepen"
+  },
+  "participle": "gelopen",
+  "aux": "hebben/zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [loop] naar huis.",
+    "de": "Ich gehe zu Fuß nach Hause."
+   },
+   {
+    "nl": "Hij [loopt] elke dag een uur.",
+    "de": "Er geht jeden Tag eine Stunde spazieren."
+   }
+  ]
+ },
+ {
+  "id": "kijken",
+  "rank": 34,
+  "infinitive": "kijken",
+  "german": "schauen",
+  "irregular": false,
+  "present": {
+   "ik": "kijk",
+   "jij": "kijkt",
+   "u": "kijkt",
+   "hij": "kijkt",
+   "zij_sg": "kijkt",
+   "het": "kijkt",
+   "wij": "kijken",
+   "jullie": "kijken",
+   "zij_pl": "kijken",
+   "q_jij": "kijk"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "keek",
+   "pl": "keken"
+  },
+  "participle": "gekeken",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [kijk] tv.",
+    "de": "Ich schaue fern."
+   },
+   {
+    "nl": "[Kijk] jij ook naar voetbal?",
+    "de": "Schaust du auch Fußball?"
+   }
+  ]
+ },
+ {
+  "id": "horen",
+  "rank": 35,
+  "infinitive": "horen",
+  "german": "hören",
+  "irregular": false,
+  "present": {
+   "ik": "hoor",
+   "jij": "hoort",
+   "u": "hoort",
+   "hij": "hoort",
+   "zij_sg": "hoort",
+   "het": "hoort",
+   "wij": "horen",
+   "jullie": "horen",
+   "zij_pl": "horen",
+   "q_jij": "hoor"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "hoorde",
+   "pl": "hoorden"
+  },
+  "participle": "gehoord",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [hoor] je niet.",
+    "de": "Ich höre dich nicht."
+   },
+   {
+    "nl": "[Hoor] je dat?",
+    "de": "Hörst du das?"
+   }
+  ]
+ },
+ {
+  "id": "eten",
+  "rank": 36,
+  "infinitive": "eten",
+  "german": "essen",
+  "irregular": false,
+  "present": {
+   "ik": "eet",
+   "jij": "eet",
+   "u": "eet",
+   "hij": "eet",
+   "zij_sg": "eet",
+   "het": "eet",
+   "wij": "eten",
+   "jullie": "eten",
+   "zij_pl": "eten",
+   "q_jij": "eet"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "at",
+   "pl": "aten"
+  },
+  "participle": "gegeten",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wij [eten] om zes uur.",
+    "de": "Wir essen um sechs Uhr."
+   },
+   {
+    "nl": "Wat [eet] jij graag?",
+    "de": "Was isst du gern?"
+   }
+  ]
+ },
+ {
+  "id": "drinken",
+  "rank": 37,
+  "infinitive": "drinken",
+  "german": "trinken",
+  "irregular": false,
+  "present": {
+   "ik": "drink",
+   "jij": "drinkt",
+   "u": "drinkt",
+   "hij": "drinkt",
+   "zij_sg": "drinkt",
+   "het": "drinkt",
+   "wij": "drinken",
+   "jullie": "drinken",
+   "zij_pl": "drinken",
+   "q_jij": "drink"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "dronk",
+   "pl": "dronken"
+  },
+  "participle": "gedronken",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [drink] geen alcohol.",
+    "de": "Ich trinke keinen Alkohol."
+   },
+   {
+    "nl": "Wat [drinkt] u?",
+    "de": "Was trinken Sie?"
+   }
+  ]
+ },
+ {
+  "id": "kopen",
+  "rank": 38,
+  "infinitive": "kopen",
+  "german": "kaufen",
+  "irregular": false,
+  "present": {
+   "ik": "koop",
+   "jij": "koopt",
+   "u": "koopt",
+   "hij": "koopt",
+   "zij_sg": "koopt",
+   "het": "koopt",
+   "wij": "kopen",
+   "jullie": "kopen",
+   "zij_pl": "kopen",
+   "q_jij": "koop"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "kocht",
+   "pl": "kochten"
+  },
+  "participle": "gekocht",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [koop] brood.",
+    "de": "Ich kaufe Brot."
+   },
+   {
+    "nl": "Waar [koop] je dat?",
+    "de": "Wo kaufst du das?"
+   }
+  ]
+ },
+ {
+  "id": "betalen",
+  "rank": 39,
+  "infinitive": "betalen",
+  "german": "bezahlen",
+  "irregular": false,
+  "present": {
+   "ik": "betaal",
+   "jij": "betaalt",
+   "u": "betaalt",
+   "hij": "betaalt",
+   "zij_sg": "betaalt",
+   "het": "betaalt",
+   "wij": "betalen",
+   "jullie": "betalen",
+   "zij_pl": "betalen",
+   "q_jij": "betaal"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "betaalde",
+   "pl": "betaalden"
+  },
+  "participle": "betaald",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [betaal].",
+    "de": "Ich zahle."
+   },
+   {
+    "nl": "[Betaalt] u contant of met pin?",
+    "de": "Zahlen Sie bar oder mit Karte?"
+   }
+  ]
+ },
+ {
+  "id": "praten",
+  "rank": 40,
+  "infinitive": "praten",
+  "german": "reden, sich unterhalten",
+  "irregular": false,
+  "present": {
+   "ik": "praat",
+   "jij": "praat",
+   "u": "praat",
+   "hij": "praat",
+   "zij_sg": "praat",
+   "het": "praat",
+   "wij": "praten",
+   "jullie": "praten",
+   "zij_pl": "praten",
+   "q_jij": "praat"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "praatte",
+   "pl": "praatten"
+  },
+  "participle": "gepraat",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wij [praten] over het weer.",
+    "de": "Wir reden über das Wetter."
+   },
+   {
+    "nl": "Hij [praat] veel.",
+    "de": "Er redet viel."
+   }
+  ]
+ },
+ {
+  "id": "vragen",
+  "rank": 41,
+  "infinitive": "vragen",
+  "german": "fragen",
+  "irregular": false,
+  "present": {
+   "ik": "vraag",
+   "jij": "vraagt",
+   "u": "vraagt",
+   "hij": "vraagt",
+   "zij_sg": "vraagt",
+   "het": "vraagt",
+   "wij": "vragen",
+   "jullie": "vragen",
+   "zij_pl": "vragen",
+   "q_jij": "vraag"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "vroeg",
+   "pl": "vroegen"
+  },
+  "participle": "gevraagd",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [vraag] het even.",
+    "de": "Ich frage mal kurz."
+   },
+   {
+    "nl": "Zij [vraagt] de weg.",
+    "de": "Sie fragt nach dem Weg."
+   }
+  ]
+ },
+ {
+  "id": "beginnen",
+  "rank": 42,
+  "infinitive": "beginnen",
+  "german": "beginnen, anfangen",
+  "irregular": false,
+  "present": {
+   "ik": "begin",
+   "jij": "begint",
+   "u": "begint",
+   "hij": "begint",
+   "zij_sg": "begint",
+   "het": "begint",
+   "wij": "beginnen",
+   "jullie": "beginnen",
+   "zij_pl": "beginnen",
+   "q_jij": "begin"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "begon",
+   "pl": "begonnen"
+  },
+  "participle": "begonnen",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "De les [begint] om negen uur.",
+    "de": "Der Unterricht beginnt um neun Uhr."
+   },
+   {
+    "nl": "Wanneer [begin] je?",
+    "de": "Wann fängst du an?"
+   }
+  ]
+ },
+ {
+  "id": "blijven",
+  "rank": 43,
+  "infinitive": "blijven",
+  "german": "bleiben",
+  "irregular": false,
+  "present": {
+   "ik": "blijf",
+   "jij": "blijft",
+   "u": "blijft",
+   "hij": "blijft",
+   "zij_sg": "blijft",
+   "het": "blijft",
+   "wij": "blijven",
+   "jullie": "blijven",
+   "zij_pl": "blijven",
+   "q_jij": "blijf"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "bleef",
+   "pl": "bleven"
+  },
+  "participle": "gebleven",
+  "aux": "zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [blijf] thuis.",
+    "de": "Ich bleibe zu Hause."
+   },
+   {
+    "nl": "Hoe lang [blijft] u?",
+    "de": "Wie lange bleiben Sie?"
+   }
+  ]
+ },
+ {
+  "id": "schrijven",
+  "rank": 44,
+  "infinitive": "schrijven",
+  "german": "schreiben",
+  "irregular": false,
+  "present": {
+   "ik": "schrijf",
+   "jij": "schrijft",
+   "u": "schrijft",
+   "hij": "schrijft",
+   "zij_sg": "schrijft",
+   "het": "schrijft",
+   "wij": "schrijven",
+   "jullie": "schrijven",
+   "zij_pl": "schrijven",
+   "q_jij": "schrijf"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "schreef",
+   "pl": "schreven"
+  },
+  "participle": "geschreven",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [schrijf] een e-mail.",
+    "de": "Ich schreibe eine E-Mail."
+   },
+   {
+    "nl": "Hoe [schrijf] je dat?",
+    "de": "Wie schreibt man das?"
+   }
+  ]
+ },
+ {
+  "id": "lezen",
+  "rank": 45,
+  "infinitive": "lezen",
+  "german": "lesen",
+  "irregular": false,
+  "present": {
+   "ik": "lees",
+   "jij": "leest",
+   "u": "leest",
+   "hij": "leest",
+   "zij_sg": "leest",
+   "het": "leest",
+   "wij": "lezen",
+   "jullie": "lezen",
+   "zij_pl": "lezen",
+   "q_jij": "lees"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "las",
+   "pl": "lazen"
+  },
+  "participle": "gelezen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [lees] de krant.",
+    "de": "Ich lese die Zeitung."
+   },
+   {
+    "nl": "[Lees] jij graag?",
+    "de": "Liest du gern?"
+   }
+  ]
+ },
+ {
+  "id": "brengen",
+  "rank": 46,
+  "infinitive": "brengen",
+  "german": "bringen",
+  "irregular": false,
+  "present": {
+   "ik": "breng",
+   "jij": "brengt",
+   "u": "brengt",
+   "hij": "brengt",
+   "zij_sg": "brengt",
+   "het": "brengt",
+   "wij": "brengen",
+   "jullie": "brengen",
+   "zij_pl": "brengen",
+   "q_jij": "breng"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "bracht",
+   "pl": "brachten"
+  },
+  "participle": "gebracht",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [breng] de kinderen naar school.",
+    "de": "Ich bringe die Kinder zur Schule."
+   },
+   {
+    "nl": "Wie [brengt] de wijn mee?",
+    "de": "Wer bringt den Wein mit?"
+   }
+  ]
+ },
+ {
+  "id": "leven",
+  "rank": 47,
+  "infinitive": "leven",
+  "german": "leben",
+  "irregular": false,
+  "present": {
+   "ik": "leef",
+   "jij": "leeft",
+   "u": "leeft",
+   "hij": "leeft",
+   "zij_sg": "leeft",
+   "het": "leeft",
+   "wij": "leven",
+   "jullie": "leven",
+   "zij_pl": "leven",
+   "q_jij": "leef"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "leefde",
+   "pl": "leefden"
+  },
+  "participle": "geleefd",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Hij [leeft] nog.",
+    "de": "Er lebt noch."
+   },
+   {
+    "nl": "Wij [leven] in een mooie tijd.",
+    "de": "Wir leben in einer schönen Zeit."
+   }
+  ]
+ },
+ {
+  "id": "reizen",
+  "rank": 48,
+  "infinitive": "reizen",
+  "german": "reisen",
+  "irregular": false,
+  "present": {
+   "ik": "reis",
+   "jij": "reist",
+   "u": "reist",
+   "hij": "reist",
+   "zij_sg": "reist",
+   "het": "reist",
+   "wij": "reizen",
+   "jullie": "reizen",
+   "zij_pl": "reizen",
+   "q_jij": "reis"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "reisde",
+   "pl": "reisden"
+  },
+  "participle": "gereisd",
+  "aux": "hebben/zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Wij [reizen] met de trein.",
+    "de": "Wir reisen mit dem Zug."
+   },
+   {
+    "nl": "Ik [reis] graag.",
+    "de": "Ich reise gern."
+   }
+  ]
+ },
+ {
+  "id": "slapen",
+  "rank": 49,
+  "infinitive": "slapen",
+  "german": "schlafen",
+  "irregular": false,
+  "present": {
+   "ik": "slaap",
+   "jij": "slaapt",
+   "u": "slaapt",
+   "hij": "slaapt",
+   "zij_sg": "slaapt",
+   "het": "slaapt",
+   "wij": "slapen",
+   "jullie": "slapen",
+   "zij_pl": "slapen",
+   "q_jij": "slaap"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "sliep",
+   "pl": "sliepen"
+  },
+  "participle": "geslapen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [slaap] slecht.",
+    "de": "Ich schlafe schlecht."
+   },
+   {
+    "nl": "[Slaap] je al?",
+    "de": "Schläfst du schon?"
+   }
+  ]
+ },
+ {
+  "id": "wachten",
+  "rank": 50,
+  "infinitive": "wachten",
+  "german": "warten",
+  "irregular": false,
+  "present": {
+   "ik": "wacht",
+   "jij": "wacht",
+   "u": "wacht",
+   "hij": "wacht",
+   "zij_sg": "wacht",
+   "het": "wacht",
+   "wij": "wachten",
+   "jullie": "wachten",
+   "zij_pl": "wachten",
+   "q_jij": "wacht"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "wachtte",
+   "pl": "wachtten"
+  },
+  "participle": "gewacht",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [wacht] op de bus.",
+    "de": "Ich warte auf den Bus."
+   },
+   {
+    "nl": "Hoe lang [wacht] u al?",
+    "de": "Wie lange warten Sie schon?"
+   }
+  ]
+ },
+ {
+  "id": "spelen",
+  "rank": 51,
+  "infinitive": "spelen",
+  "german": "spielen",
+  "irregular": false,
+  "present": {
+   "ik": "speel",
+   "jij": "speelt",
+   "u": "speelt",
+   "hij": "speelt",
+   "zij_sg": "speelt",
+   "het": "speelt",
+   "wij": "spelen",
+   "jullie": "spelen",
+   "zij_pl": "spelen",
+   "q_jij": "speel"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "speelde",
+   "pl": "speelden"
+  },
+  "participle": "gespeeld",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "De kinderen [spelen] buiten.",
+    "de": "Die Kinder spielen draußen."
+   },
+   {
+    "nl": "[Speel] jij een instrument?",
+    "de": "Spielst du ein Instrument?"
+   }
+  ]
+ },
+ {
+  "id": "bellen",
+  "rank": 52,
+  "infinitive": "bellen",
+  "german": "anrufen; klingeln (Falscher Freund!)",
+  "irregular": false,
+  "present": {
+   "ik": "bel",
+   "jij": "belt",
+   "u": "belt",
+   "hij": "belt",
+   "zij_sg": "belt",
+   "het": "belt",
+   "wij": "bellen",
+   "jullie": "bellen",
+   "zij_pl": "bellen",
+   "q_jij": "bel"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "belde",
+   "pl": "belden"
+  },
+  "participle": "gebeld",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [bel] je morgen.",
+    "de": "Ich rufe dich morgen an."
+   },
+   {
+    "nl": "Wie [belt] er?",
+    "de": "Wer ruft an?"
+   }
+  ]
+ },
+ {
+  "id": "zoeken",
+  "rank": 53,
+  "infinitive": "zoeken",
+  "german": "suchen",
+  "irregular": false,
+  "present": {
+   "ik": "zoek",
+   "jij": "zoekt",
+   "u": "zoekt",
+   "hij": "zoekt",
+   "zij_sg": "zoekt",
+   "het": "zoekt",
+   "wij": "zoeken",
+   "jullie": "zoeken",
+   "zij_pl": "zoeken",
+   "q_jij": "zoek"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "zocht",
+   "pl": "zochten"
+  },
+  "participle": "gezocht",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [zoek] het station.",
+    "de": "Ich suche den Bahnhof."
+   },
+   {
+    "nl": "Wat [zoekt] u?",
+    "de": "Was suchen Sie?"
+   }
+  ]
+ },
+ {
+  "id": "helpen",
+  "rank": 54,
+  "infinitive": "helpen",
+  "german": "helfen",
+  "irregular": false,
+  "present": {
+   "ik": "help",
+   "jij": "helpt",
+   "u": "helpt",
+   "hij": "helpt",
+   "zij_sg": "helpt",
+   "het": "helpt",
+   "wij": "helpen",
+   "jullie": "helpen",
+   "zij_pl": "helpen",
+   "q_jij": "help"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "hielp",
+   "pl": "hielpen"
+  },
+  "participle": "geholpen",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [help] je.",
+    "de": "Ich helfe dir."
+   },
+   {
+    "nl": "Wie [helpt] mij?",
+    "de": "Wer hilft mir?"
+   }
+  ]
+ },
+ {
+  "id": "rijden",
+  "rank": 55,
+  "infinitive": "rijden",
+  "german": "fahren",
+  "irregular": false,
+  "present": {
+   "ik": "rijd",
+   "jij": "rijdt",
+   "u": "rijdt",
+   "hij": "rijdt",
+   "zij_sg": "rijdt",
+   "het": "rijdt",
+   "wij": "rijden",
+   "jullie": "rijden",
+   "zij_pl": "rijden",
+   "q_jij": "rijd"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "reed",
+   "pl": "reden"
+  },
+  "participle": "gereden",
+  "aux": "hebben/zijn",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Ik [rijd] naar Rotterdam.",
+    "de": "Ich fahre nach Rotterdam."
+   },
+   {
+    "nl": "[Rijdt] deze bus naar het centrum?",
+    "de": "Fährt dieser Bus ins Zentrum?"
+   }
+  ]
+ },
+ {
+  "id": "koken",
+  "rank": 56,
+  "infinitive": "koken",
+  "german": "kochen",
+  "irregular": false,
+  "present": {
+   "ik": "kook",
+   "jij": "kookt",
+   "u": "kookt",
+   "hij": "kookt",
+   "zij_sg": "kookt",
+   "het": "kookt",
+   "wij": "koken",
+   "jullie": "koken",
+   "zij_pl": "koken",
+   "q_jij": "kook"
+  },
+  "accepted": {},
+  "past": {
+   "sg": "kookte",
+   "pl": "kookten"
+  },
+  "participle": "gekookt",
+  "aux": "hebben",
+  "separable": false,
+  "examples": [
+   {
+    "nl": "Vanavond [kook] ik.",
+    "de": "Heute Abend koche ich."
+   },
+   {
+    "nl": "[Kook] jij graag?",
+    "de": "Kochst du gern?"
+   }
+  ]
+ }
+]

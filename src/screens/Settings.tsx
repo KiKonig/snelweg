@@ -135,9 +135,6 @@ export function SettingsScreen() {
 
       <section class="card">
         <h3>Sonstiges</h3>
-        <button class="btn" disabled title="kommt in Meilenstein 8">
-          Einstufungstest wiederholen
-        </button>
         <button class="btn danger" onClick={onReset}>
           Fortschritt zurücksetzen
         </button>

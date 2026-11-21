@@ -1,4 +1,5 @@
 // Tiny hash router: works on GitHub Pages without server config.
+// URLs look like #/bibliothek/verb/gaan → route "bibliothek", params ["verb", "gaan"].
 import { useEffect, useState } from 'preact/hooks'
 
 export type Route =
@@ -22,24 +23,34 @@ const ROUTES: Route[] = [
   'einstellungen',
 ]
 
-function parse(): Route {
-  const r = location.hash.replace(/^#\/?/, '').split('?')[0] as Route
-  return ROUTES.includes(r) ? r : 'home'
+export interface Loc {
+  route: Route
+  params: string[]
 }
 
-export function go(r: Route) {
-  location.hash = '/' + r
+function parse(): Loc {
+  const parts = location.hash.replace(/^#\/?/, '').split('/').map(decodeURIComponent)
+  const r = parts[0] as Route
+  return ROUTES.includes(r) ? { route: r, params: parts.slice(1).filter(Boolean) } : { route: 'home', params: [] }
 }
 
-export function useRoute(): Route {
-  const [route, setRoute] = useState<Route>(parse())
+export function href(route: Route, ...params: string[]): string {
+  return '#/' + [route, ...params].map(encodeURIComponent).join('/')
+}
+
+export function go(route: Route, ...params: string[]) {
+  location.hash = href(route, ...params).slice(1)
+}
+
+export function useLoc(): Loc {
+  const [loc, setLoc] = useState<Loc>(parse())
   useEffect(() => {
     const on = () => {
-      setRoute(parse())
+      setLoc(parse())
       window.scrollTo(0, 0)
     }
     window.addEventListener('hashchange', on)
     return () => window.removeEventListener('hashchange', on)
   }, [])
-  return route
+  return loc
 }

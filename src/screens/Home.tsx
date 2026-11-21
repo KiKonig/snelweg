@@ -1,17 +1,30 @@
 import { useEffect, useState } from 'preact/hooks'
 import { Header, PlayButton, VoiceHelp } from '../components'
 import { currentStreak, getStats, type Stats } from '../db'
-import { planState } from '../plan'
+import { planState, WEEK_FOCUS } from '../plan'
+import { href } from '../router'
+import { allCards, isLearned } from '../srs'
 import { useSettings } from '../settings'
 import { useDutchVoice } from '../tts'
+
+const LENGTHS = [10, 20, 30, 45, 60]
 
 export function Home() {
   const { settings } = useSettings()
   const voice = useDutchVoice()
   const [stats, setStats] = useState<Stats | null>(null)
+  const [due, setDue] = useState<number | null>(null)
+  const [learned, setLearned] = useState(0)
+  const [minutes, setMinutes] = useState<number | null>(null)
   useEffect(() => {
     getStats().then(setStats)
+    allCards().then((cs) => {
+      const now = Date.now()
+      setDue(cs.filter((c) => c.due <= now).length)
+      setLearned(cs.filter(isLearned).length)
+    })
   }, [])
+  const len = minutes ?? settings.dailyMinutes
   const plan = planState()
 
   return (
@@ -34,35 +47,34 @@ export function Home() {
       />
 
       <section class="card plan">
-        {plan.phase === 'before' && (
-          <>
-            <p class="eyebrow">Weihnachtsplan</p>
-            <p>
-              Woche 1 beginnt am Montag, 23. November
-              {plan.daysUntilStart === 1 ? ' – morgen.' : ` – in ${plan.daysUntilStart} Tagen.`}
-            </p>
-          </>
-        )}
-        {plan.phase === 'christmas' && (
-          <>
-            <p class="eyebrow">
-              Woche {plan.week} von 5 · noch {plan.daysLeft} {plan.daysLeft === 1 ? 'Tag' : 'Tage'} bis Weihnachten
-            </p>
-            <p>{plan.focus}</p>
-          </>
-        )}
-        {plan.phase === 'longterm' && (
+        {plan.phase === 'longterm' ? (
           <>
             <p class="eyebrow">Langzeitmodus</p>
-            <p>Weiter Richtung fließend: neue Themen kommen, sobald du bereit bist.</p>
+            <p>Weiter Richtung fließend.</p>
+          </>
+        ) : (
+          <>
+            <p class="eyebrow">
+              {plan.phase === 'christmas'
+                ? `Woche ${plan.week} von 5 · noch ${plan.daysLeft} ${plan.daysLeft === 1 ? 'Tag' : 'Tage'} bis Weihnachten`
+                : 'Vorstart · Fokus wie Woche 1'}
+            </p>
+            <p>{plan.phase === 'christmas' ? plan.focus : WEEK_FOCUS[0]}</p>
           </>
         )}
       </section>
 
-      <a href="#/sitzung" class="btn primary big">
-        Heutige Sitzung starten
-        <small>ca. {settings.dailyMinutes} Minuten</small>
+      <a href={href('sitzung', 'daily', String(len))} class="btn primary big">
+        Sitzung starten
+        <small>ca. {len} Minuten</small>
       </a>
+      <div class="chips" role="group" aria-label="Länge der Sitzung">
+        {LENGTHS.map((m) => (
+          <button class={`chip ${m === len ? 'active' : ''}`} onClick={() => setMinutes(m)} aria-pressed={m === len}>
+            {m} Min.
+          </button>
+        ))}
+      </div>
 
       <div class="stats">
         <div>
@@ -70,43 +82,43 @@ export function Home() {
           <span>Tage in Folge</span>
         </div>
         <div>
-          <strong>0</strong>
+          <strong>{due ?? '–'}</strong>
           <span>fällig</span>
         </div>
         <div>
-          <strong>A0</strong>
-          <span>Niveau</span>
+          <strong>{learned}</strong>
+          <span>gelernt</span>
         </div>
       </div>
 
       <div class="row">
-        <button class="btn" disabled title="kommt in Meilenstein 10">
-          Speed-Runde
-        </button>
         <a href="#/sprechen" class="btn">
-          Freies Üben
+          Sätze üben
+        </a>
+        <a href={href('bibliothek', 'verben')} class="btn">
+          Verben üben
         </a>
       </div>
 
       <VoiceHelp status={voice.status} />
 
-      <section class="card">
-        <h3>Hörprobe</h3>
-        <div class="phrase">
-          <div>
-            <p class="nl">Goedemorgen! Hoe gaat het met je?</p>
-            <p class="de">Guten Morgen! Wie geht es dir?</p>
-          </div>
-          <PlayButton text="Goedemorgen! Hoe gaat het met je?" />
-        </div>
-      </section>
-
-      {plan.phase !== 'before' && (plan.phase === 'longterm' || plan.week >= 3) && (
+      {plan.phase !== 'before' && (plan.phase === 'longterm' || plan.week >= 3) ? (
         <section class="card note">
           <p>
-            Echte Gespräche zählen am meisten. Sprich mindestens einmal pro Woche mit einem Menschen Niederländisch –
-            zum Beispiel in einem Sprachtandem.
+            Echte Gespräche zählen am meisten. Sprich mindestens einmal pro Woche mit einem Menschen Niederländisch – zum Beispiel in
+            einem Sprachtandem.
           </p>
+        </section>
+      ) : (
+        <section class="card">
+          <h3>Hörprobe</h3>
+          <div class="phrase">
+            <div>
+              <p class="nl">Goedemorgen! Hoe gaat het met je?</p>
+              <p class="de">Guten Morgen! Wie geht es dir?</p>
+            </div>
+            <PlayButton text="Goedemorgen! Hoe gaat het met je?" />
+          </div>
         </section>
       )}
     </>
