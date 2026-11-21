@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1f4e5f"/>
+  <!-- a motorway (snelweg) running toward the horizon -->
+  <path d="M216 120 L296 120 L420 420 L92 420 Z" fill="#f6f5f1"/>
+  <path d="M250 150 h12 v36 h-12 z M246 214 h20 v52 h-20 z M240 296 h32 v80 h-32 z" fill="#e8742a"/>
+</svg>

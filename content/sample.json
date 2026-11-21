@@ -1,0 +1,22 @@
+{
+  "_note": "Platzhalter-Inhalte für Meilenstein 1. Die echten Inhalte folgen ab Meilenstein 2.",
+  "words": [
+    { "id": "w-huis", "dutch": "huis", "article": "het", "german": "das Haus" },
+    { "id": "w-tijd", "dutch": "tijd", "article": "de", "german": "die Zeit" },
+    { "id": "w-water", "dutch": "water", "article": "het", "german": "das Wasser" },
+    { "id": "w-appel", "dutch": "appel", "article": "de", "german": "der Apfel" },
+    { "id": "w-boek", "dutch": "boek", "article": "het", "german": "das Buch" },
+    { "id": "w-week", "dutch": "week", "article": "de", "german": "die Woche" },
+    { "id": "w-winkel", "dutch": "winkel", "article": "de", "german": "der Laden, das Geschäft" },
+    { "id": "w-zee", "dutch": "zee", "article": "de", "german": "das Meer" }
+  ],
+  "phrases": [
+    { "id": "p-goedemorgen", "situation": "Begrüßung", "nl": "Goedemorgen!", "de": "Guten Morgen!" },
+    { "id": "p-hoegaat", "situation": "Begrüßung", "nl": "Hoe gaat het met je?", "de": "Wie geht es dir?" },
+    { "id": "p-ikleer", "situation": "Mich vorstellen", "nl": "Ik leer Nederlands.", "de": "Ich lerne Niederländisch." },
+    { "id": "p-herhalen", "situation": "Nicht verstanden", "nl": "Kunt u dat herhalen, alstublieft?", "de": "Können Sie das bitte wiederholen?" },
+    { "id": "p-koffie", "situation": "Café", "nl": "Een koffie, alstublieft.", "de": "Einen Kaffee, bitte." },
+    { "id": "p-station", "situation": "Wegbeschreibung", "nl": "Waar is het station?", "de": "Wo ist der Bahnhof?" },
+    { "id": "p-dankjewel", "situation": "Café", "nl": "Dank je wel!", "de": "Danke schön!" }
+  ]
+}
