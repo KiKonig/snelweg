@@ -2,6 +2,7 @@
 import { createContext, type ComponentChildren } from 'preact'
 import { useContext, useEffect, useState } from 'preact/hooks'
 import { DEFAULT_SETTINGS, getSettings, saveSettings, type Settings } from './db'
+export type { Settings }
 
 interface Ctx {
   settings: Settings

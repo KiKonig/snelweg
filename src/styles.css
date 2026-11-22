@@ -711,6 +711,89 @@ p.feedback.ok {
   opacity: 1;
 }
 
+/* ---------- speaking / pronunciation ---------- */
+
+.speak-check {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0 4px;
+}
+
+.btn.mic {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn.live {
+  border-color: var(--bad);
+  color: var(--bad);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--bad) 20%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn.live {
+    animation: none;
+  }
+}
+
+.speech-result {
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--border);
+}
+
+.speech-result.good { background: color-mix(in srgb, var(--good) 12%, transparent); }
+.speech-result.mid { background: color-mix(in srgb, var(--mid) 14%, transparent); }
+.speech-result.bad { background: color-mix(in srgb, var(--bad) 10%, transparent); }
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.score {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.marks {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.mark.ok { color: var(--good); }
+.mark.close { color: var(--mid); text-decoration: underline dotted; }
+.mark.missing { color: var(--bad); text-decoration: underline wavy; }
+
+.small { font-size: 0.82rem; }
+
+.btn.suggested {
+  border-width: 2px;
+  border-color: currentColor;
+  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 18%, transparent);
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.icon-btn.on {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
 /* ---------- session ---------- */
 
 .session {

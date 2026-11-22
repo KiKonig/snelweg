@@ -1,6 +1,8 @@
-import { useRef, useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { Header, PlayButton, VoiceHelp } from '../components'
 import { exportProgress, importProgress, resetProgress } from '../db'
+import { countRecordings, deleteRecordings, recordingSupported } from '../recorder'
+import { recognitionSupported } from '../speech'
 import { useSettings } from '../settings'
 import { useDutchVoice } from '../tts'
 
@@ -30,6 +32,10 @@ export function SettingsScreen() {
   const voice = useDutchVoice()
   const fileInput = useRef<HTMLInputElement>(null)
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null)
+  const [recCount, setRecCount] = useState<number | null>(null)
+  useEffect(() => {
+    if (recordingSupported) countRecordings().then(setRecCount)
+  }, [])
 
   const onExport = async () => {
     try {
@@ -117,6 +123,43 @@ export function SettingsScreen() {
         <p class="muted">Kein Ton? Auf dem iPhone bleibt die Sprachausgabe stumm, wenn das Gerät auf lautlos steht (Stumm-Schalter bzw. Aktionstaste).</p>
       </section>
       <VoiceHelp status={voice.status} />
+
+      <section class="card">
+        <h3>Aussprache</h3>
+        {recognitionSupported ? (
+          <>
+            <label class="field toggle">
+              <span>Aussprache-Check (Spracherkennung)</span>
+              <input
+                type="checkbox"
+                checked={settings.speechCheck}
+                onChange={(e) => update({ speechCheck: (e.target as HTMLInputElement).checked })}
+              />
+            </label>
+            <p class="muted small">
+              Die Spracherkennung schreibt mit, was sie verstanden hat, und vergleicht es Wort für Wort. Braucht Internet. iPhone: Unter
+              Einstellungen → Allgemein → Tastatur muss die „Diktierfunktion“ an sein.
+            </p>
+          </>
+        ) : (
+          <p class="muted small">Spracherkennung wird hier nicht unterstützt – Aufnehmen und Vergleichen funktioniert trotzdem.</p>
+        )}
+        {recordingSupported && (
+          <div class="phrase">
+            <p class="muted small">Gespeicherte Aufnahmen: {recCount ?? '–'} (max. 20, nur auf diesem Gerät)</p>
+            <button
+              class="btn"
+              disabled={!recCount}
+              onClick={async () => {
+                await deleteRecordings()
+                setRecCount(0)
+              }}
+            >
+              Löschen
+            </button>
+          </div>
+        )}
+      </section>
 
       <section class="card">
         <h3>Fortschritt sichern</h3>

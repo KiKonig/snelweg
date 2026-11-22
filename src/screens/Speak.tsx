@@ -1,13 +1,23 @@
+import { useState } from 'preact/hooks'
 import { Header, PlayButton } from '../components'
 import { phrases, situations } from '../content'
 import { href } from '../router'
+import { SpeakCheck } from '../SpeakCheck'
+import { recognitionSupported } from '../speech'
+import { recordingSupported } from '../recorder'
+
+const micAvailable = recognitionSupported || recordingSupported
 
 export function Speak({ params }: { params: string[] }) {
   const open = params[0]
+  const [mic, setMic] = useState<string | null>(null)
   return (
     <>
       <Header title="Sprechen" />
-      <p class="muted">Tippe eine Situation an. „Üben“ startet eine kurze Runde nur mit diesen Sätzen.</p>
+      <p class="muted">
+        Tippe eine Situation an. „Diese Sätze üben“ startet eine kurze Runde.
+        {micAvailable && ' Mit 🎤 prüfst du die Aussprache einzelner Sätze.'}
+      </p>
       {situations.map((s) => {
         const ps = phrases.filter((p) => p.situation === s)
         return (
@@ -19,12 +29,27 @@ export function Speak({ params }: { params: string[] }) {
               Diese Sätze üben
             </a>
             {ps.map((p) => (
-              <div class="phrase" key={p.id}>
-                <div>
-                  <p class="nl">{p.nl}</p>
-                  <p class="de">{p.de}</p>
+              <div key={p.id}>
+                <div class="phrase">
+                  <div>
+                    <p class="nl">{p.nl}</p>
+                    <p class="de">{p.de}</p>
+                  </div>
+                  <div class="row-inline nowrap">
+                    {micAvailable && (
+                      <button
+                        class={`icon-btn play ${mic === p.id ? 'on' : ''}`}
+                        aria-label={`Aussprache üben: ${p.nl}`}
+                        aria-expanded={mic === p.id}
+                        onClick={() => setMic(mic === p.id ? null : p.id)}
+                      >
+                        🎤
+                      </button>
+                    )}
+                    <PlayButton text={p.nl} />
+                  </div>
                 </div>
-                <PlayButton text={p.nl} />
+                {mic === p.id && <SpeakCheck text={p.nl} />}
               </div>
             ))}
           </details>

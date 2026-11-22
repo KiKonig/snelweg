@@ -23,8 +23,15 @@
 - Dictionary: searches verbs, phrases, examples, false friends both ways (real 3,000-entry dictionary still to do)
 - Progress: skills (verbs, sentence structure, speaking, listening), minutes per day, top mistakes
 
+**Pronunciation** (v0.3.0)
+- Pronunciation check (SPEC exercise 16, optional): browser speech recognition (nl-NL) → word-by-word comparison with the target (fuzzy LCS, digits → words, split/joined compounds), score + verdict, red/orange word marks, best of up to 5 recognizer alternatives (`src/speech.ts`)
+- In "Sag es": speak into the mic first → answer is revealed with the score, and the matching self-grade is suggested (self-grading stays)
+- Record yourself (MediaRecorder, works offline) → play yours and the model; last 20 recordings kept on device, deletable, excluded from export (`src/recorder.ts`)
+- Mic tools also in new-phrase intros and on every phrase in Sprechen (🎤); settings toggle + dictation hint
+- Not verified on a real iPhone yet (speech recognition in home-screen apps, audio routing after mic use)
+
 ## Next (in spec order, shipped as soon as usable)
-- Dialogues with role-play, shadowing with recording, personal answers screen
+- Dialogues with role-play, personal answers screen
 - words.json + de/het drill, real dictionary data
 - Sentences (German → Dutch translation, word bank, dictation)
 - Rule exercises (predict the Dutch), false-friend trap exercise

@@ -11,6 +11,7 @@ export interface Settings {
   dailyMinutes: number
   audioOn: boolean
   audioRate: number
+  speechCheck: boolean // optional pronunciation check via speech recognition
 }
 
 export interface Stats {
@@ -23,16 +24,18 @@ export interface Stats {
 class SnelwegDB extends Dexie {
   kv!: Table<KV, string>
   cards!: Table<import('./srs').CardRow, string>
+  recordings!: Table<import('./recorder').RecordingRow, number>
   constructor() {
     super('snelweg')
     this.version(1).stores({ kv: 'key' })
     this.version(2).stores({ kv: 'key', cards: 'id, due, kind' })
+    this.version(3).stores({ kv: 'key', cards: 'id, due, kind', recordings: '++id, at' })
   }
 }
 
 export const db = new SnelwegDB()
 
-export const DEFAULT_SETTINGS: Settings = { dailyMinutes: 30, audioOn: true, audioRate: 0.9 }
+export const DEFAULT_SETTINGS: Settings = { dailyMinutes: 30, audioOn: true, audioRate: 0.9, speechCheck: true }
 export const DEFAULT_STATS: Stats = { streak: 0, lastSessionDate: null, sessionsDone: 0, itemsSeen: 0 }
 
 async function getKV<T>(key: string, fallback: T): Promise<T> {
@@ -89,8 +92,9 @@ const EXPORT_APP = 'snelweg'
 const EXPORT_FORMAT = 1
 
 export async function exportProgress(): Promise<File> {
+  // Recordings (audio) stay on the device and are not part of the backup.
   const tables: Record<string, unknown[]> = {}
-  for (const t of db.tables) tables[t.name] = await t.toArray()
+  for (const t of db.tables) if (t.name !== 'recordings') tables[t.name] = await t.toArray()
   const data = {
     app: EXPORT_APP,
     format: EXPORT_FORMAT,
@@ -115,8 +119,9 @@ export async function importProgress(file: File): Promise<void> {
   if (data.format > EXPORT_FORMAT) {
     throw new Error('Diese Sicherung stammt aus einer neueren App-Version. Bitte zuerst die App aktualisieren.')
   }
-  await db.transaction('rw', db.tables, async () => {
-    for (const t of db.tables) {
+  const tables = db.tables.filter((t) => t.name !== 'recordings')
+  await db.transaction('rw', tables, async () => {
+    for (const t of tables) {
       await t.clear()
       const rows = data.tables[t.name]
       if (Array.isArray(rows)) await t.bulkPut(rows)

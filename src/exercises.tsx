@@ -18,6 +18,8 @@ import { classifyConj, isAccepted } from './check'
 import type { Item } from './session'
 import { speak } from './tts'
 import { useSettings } from './settings'
+import { SpeakCheck, SpeechResult } from './SpeakCheck'
+import { bestScore, listen, LISTEN_ERROR_TEXT, recognitionSupported, stopListening, type ListenError, type SpeechScore } from './speech'
 
 export interface Answer {
   correct: boolean
@@ -103,6 +105,7 @@ export function IntroPhrase({ phrase, onDone }: { phrase: string; onDone: () => 
         <PlayButton text={p.nl} slow label="Langsam anhören" />
         <span class="muted">Anhören und zweimal laut nachsprechen.</span>
       </div>
+      <SpeakCheck text={p.nl} />
       <button class="btn primary big" onClick={onDone}>
         Weiter
       </button>
@@ -270,12 +273,44 @@ export function TypedExercise({ item, onAnswer }: { item: Item; onAnswer: (a: An
 export function SayIt({ item, onGrade }: { item: Item & { type: 'say' }; onGrade: (g: 'nicht' | 'fast' | 'gewusst') => void }) {
   const p = phraseById.get(item.phrase)!
   const [revealed, setRevealed] = useState(false)
+  const [listening, setListening] = useState(false)
+  const [interim, setInterim] = useState('')
+  const [result, setResult] = useState<SpeechScore | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const { settings } = useSettings()
-  useEffect(() => setRevealed(false), [item])
+  const canCheck = recognitionSupported && settings.speechCheck
+  useEffect(() => {
+    setRevealed(false)
+    setResult(null)
+    setError(null)
+    setListening(false)
+    return () => stopListening()
+  }, [item])
+
   const reveal = () => {
     setRevealed(true)
     if (settings.audioOn) speak(p.nl, settings.audioRate)
   }
+
+  // Say it into the mic first; the result reveals the answer.
+  const speakNow = async () => {
+    if (listening) return stopListening()
+    setError(null)
+    setInterim('')
+    setListening(true)
+    try {
+      const r = bestScore(p.nl, await listen(setInterim))
+      setResult(r)
+      setRevealed(true)
+    } catch (e) {
+      setError(LISTEN_ERROR_TEXT[(e as ListenError) in LISTEN_ERROR_TEXT ? (e as ListenError) : 'other'])
+    } finally {
+      setListening(false)
+    }
+  }
+
+  const suggest = result ? (result.score >= 90 ? 'gewusst' : result.score >= 60 ? 'fast' : 'nicht') : null
+
   return (
     <div class="ex">
       <p class="tag">Sag es laut · {p.situation}</p>
@@ -283,27 +318,39 @@ export function SayIt({ item, onGrade }: { item: Item & { type: 'say' }; onGrade
       <p class="prompt">{p.de}</p>
       {revealed ? (
         <>
+          {result && <SpeechResult r={result} />}
           <div class="answer">
             <p class="nl">{p.nl}</p>
             <PlayButton text={p.nl} />
             <PlayButton text={p.nl} slow label="Langsam anhören" />
           </div>
+          <SpeakCheck text={p.nl} compact />
+          <p class="muted small">{suggest ? 'Vorschlag nach dem Check – du entscheidest:' : 'Wie war’s?'}</p>
           <div class="grade">
-            <button class="btn bad" onClick={() => onGrade('nicht')}>
+            <button class={`btn bad ${suggest === 'nicht' ? 'suggested' : ''}`} onClick={() => onGrade('nicht')}>
               Nicht gewusst
             </button>
-            <button class="btn mid" onClick={() => onGrade('fast')}>
+            <button class={`btn mid ${suggest === 'fast' ? 'suggested' : ''}`} onClick={() => onGrade('fast')}>
               Fast
             </button>
-            <button class="btn good" onClick={() => onGrade('gewusst')}>
+            <button class={`btn good ${suggest === 'gewusst' ? 'suggested' : ''}`} onClick={() => onGrade('gewusst')}>
               Gewusst
             </button>
           </div>
         </>
       ) : (
-        <button class="btn primary big" onClick={reveal}>
-          Aufdecken und anhören
-        </button>
+        <>
+          {canCheck && (
+            <button class={`btn mic big ${listening ? 'live' : ''}`} onClick={speakNow}>
+              {listening ? '● Ich höre zu … (tippen = fertig)' : '🎤 Ins Mikrofon sprechen'}
+              {listening && interim && <small>„{interim}“</small>}
+            </button>
+          )}
+          {error && <p class="error small">{error}</p>}
+          <button class={`btn ${canCheck ? '' : 'primary'} big`} onClick={reveal} disabled={listening}>
+            {canCheck ? 'Nur aufdecken' : 'Aufdecken und anhören'}
+          </button>
+        </>
       )}
     </div>
   )
