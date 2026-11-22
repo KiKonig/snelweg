@@ -26,72 +26,153 @@ export const LISTEN_ERROR_TEXT: Record<ListenError, string> = {
   'not-allowed':
     'Kein Zugriff aufs Mikrofon oder Diktieren ist aus. iPhone: Einstellungen → Allgemein → Tastatur → „Diktierfunktion“ einschalten, und beim Mikrofon-Dialog „Erlauben“ wählen.',
   network: 'Der Aussprache-Check braucht Internet. Offline kannst du dich aufnehmen und vergleichen.',
-  'no-speech': 'Ich habe nichts gehört. Tippe noch einmal und sprich deutlich ins Mikrofon.',
+  'no-speech': 'Ich habe nichts gehört. Tippe auf 🎤, warte einen Moment und sprich dann deutlich – ruhig etwas lauter.',
   unsupported: 'Dieser Browser unterstützt keine Spracherkennung.',
   other: 'Die Spracherkennung hat nicht geklappt. Versuch es noch einmal.',
 }
 
-let active: Rec | null = null
+/** Timing: how long we keep listening. */
+const WAIT_FOR_SPEECH_MS = 7000 // nothing heard at all → give up
+const SILENCE_AFTER_SPEECH_MS = 1600 // pause after speaking → done
+const MAX_MS = 12000 // hard cap
 
+let active: { rec: Rec; finish: () => void } | null = null
+
+/** Stop listening and evaluate what was heard so far ("fertig" tap). */
 export function stopListening() {
+  active?.finish()
+}
+
+/** Abort without evaluating (e.g. leaving the screen). */
+export function cancelListening() {
+  if (!active) return
+  const a = active
+  active = null
   try {
-    active?.stop()
+    a.rec.onend = null
+    a.rec.onresult = null
+    a.rec.onerror = null
+    a.rec.abort()
   } catch {
     /* ignore */
   }
 }
 
 /**
- * Listen once. Resolves with all alternatives the recognizer offers
- * (we pick the one closest to the target – fairer for learners).
+ * Listen until the speaker is done. iPhone's recognizer stops at the first
+ * short pause when continuous=false, which cut people off before they even
+ * started – so we listen continuously and decide ourselves when to stop:
+ * after a pause once something was said, after a timeout, or on "fertig".
+ * Resolves with alternatives for the whole utterance (best one is picked later).
  */
 export function listen(onInterim?: (text: string) => void): Promise<string[]> {
   return new Promise((resolve, reject) => {
     if (!Ctor) return reject('unsupported' as ListenError)
-    active?.abort()
+    cancelListening()
+    // Xander must not talk into the microphone.
+    try {
+      if (window.speechSynthesis?.speaking || window.speechSynthesis?.pending) window.speechSynthesis.cancel()
+    } catch {
+      /* ignore */
+    }
+
     const r = new Ctor()
-    active = r
     r.lang = 'nl-NL'
     r.interimResults = true
     r.maxAlternatives = 5
-    r.continuous = false
-    let finals: string[] = []
-    let lastInterim = ''
-    let failed = false
+    r.continuous = true
+
+    // segments[i] = alternatives for result i (final or latest interim)
+    let segments: string[][] = []
+    let error: ListenError | null = null
+    let done = false
+    let stopping = false
+    const startedAt = Date.now()
+    let silenceTimer: ReturnType<typeof setTimeout> | undefined
+
+    const heard = () => segments.some((s) => s[0]?.trim())
+
+    const alternatives = (): string[] => {
+      const n = Math.max(1, ...segments.map((s) => s.length))
+      const out: string[] = []
+      for (let k = 0; k < n; k++) {
+        const t = segments
+          .map((s) => s[k] ?? s[0] ?? '')
+          .join(' ')
+          .replace(/\s+/g, ' ')
+          .trim()
+        if (t && !out.includes(t)) out.push(t)
+      }
+      return out
+    }
+
+    const settle = () => {
+      if (done) return
+      done = true
+      clearTimeout(silenceTimer)
+      clearTimeout(waitTimer)
+      clearTimeout(maxTimer)
+      if (active?.rec === r) active = null
+      if (heard()) resolve(alternatives())
+      else reject(error ?? 'no-speech')
+    }
+
+    const finish = () => {
+      if (done || stopping) return
+      stopping = true
+      try {
+        r.stop() // → onend → settle (with whatever was heard)
+      } catch {
+        settle()
+      }
+      // Safety net in case onend never fires (seen on iOS).
+      setTimeout(settle, 1500)
+    }
+
     r.onresult = (e: any) => {
       for (let i = e.resultIndex; i < e.results.length; i++) {
         const res = e.results[i]
-        if (res.isFinal) {
-          finals = Array.from({ length: res.length }, (_, k) => res[k].transcript as string)
-        } else {
-          lastInterim = res[0].transcript
-          onInterim?.(lastInterim)
+        segments[i] = Array.from({ length: res.length }, (_, k) => String(res[k].transcript))
+      }
+      segments = segments.filter(Boolean)
+      onInterim?.(segments.map((s) => s[0]).join(' ').trim())
+      clearTimeout(silenceTimer)
+      silenceTimer = setTimeout(finish, SILENCE_AFTER_SPEECH_MS)
+    }
+
+    r.onerror = (e: any) => {
+      // "no-speech" and "aborted" are not fatal: onend decides based on what we heard.
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') error = 'not-allowed'
+      else if (e.error === 'network') error = 'network'
+      else if (e.error === 'no-speech' || e.error === 'aborted') error = error ?? 'no-speech'
+      else error = 'other'
+    }
+
+    let restarted = false
+    r.onend = () => {
+      // iOS sometimes ends a session right after starting. Restart once.
+      if (!stopping && !done && !heard() && !restarted && error !== 'not-allowed' && error !== 'network' && Date.now() - startedAt < 1500) {
+        restarted = true
+        error = null
+        try {
+          r.start()
+          return
+        } catch {
+          /* fall through */
         }
       }
+      settle()
     }
-    r.onerror = (e: any) => {
-      failed = true
-      const err: ListenError =
-        e.error === 'not-allowed' || e.error === 'service-not-allowed'
-          ? 'not-allowed'
-          : e.error === 'network'
-            ? 'network'
-            : e.error === 'no-speech' || e.error === 'aborted'
-              ? 'no-speech'
-              : 'other'
-      reject(err)
-    }
-    r.onend = () => {
-      active = null
-      if (failed) return
-      const out = finals.length ? finals : lastInterim ? [lastInterim] : []
-      if (out.length) resolve(out)
-      else reject('no-speech' as ListenError)
-    }
+
+    const waitTimer = setTimeout(() => !heard() && finish(), WAIT_FOR_SPEECH_MS)
+    const maxTimer = setTimeout(finish, MAX_MS)
+    active = { rec: r, finish }
+
     try {
       r.start()
     } catch {
-      reject('other' as ListenError)
+      error = 'other'
+      settle()
     }
   })
 }

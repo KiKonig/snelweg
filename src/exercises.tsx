@@ -19,7 +19,16 @@ import type { Item } from './session'
 import { speak } from './tts'
 import { useSettings } from './settings'
 import { SpeakCheck, SpeechResult } from './SpeakCheck'
-import { bestScore, listen, LISTEN_ERROR_TEXT, recognitionSupported, stopListening, type ListenError, type SpeechScore } from './speech'
+import {
+  bestScore,
+  cancelListening,
+  listen,
+  LISTEN_ERROR_TEXT,
+  recognitionSupported,
+  stopListening,
+  type ListenError,
+  type SpeechScore,
+} from './speech'
 
 export interface Answer {
   correct: boolean
@@ -284,7 +293,7 @@ export function SayIt({ item, onGrade }: { item: Item & { type: 'say' }; onGrade
     setResult(null)
     setError(null)
     setListening(false)
-    return () => stopListening()
+    return () => cancelListening()
   }, [item])
 
   const reveal = () => {
@@ -378,7 +387,7 @@ export function Listen({ item, onAnswer }: { item: Item & { type: 'listen' }; on
   }, [item])
 
   const play = (slow = false) => {
-    speak(p.nl, slow ? Math.max(0.5, settings.audioRate - 0.3) : settings.audioRate)
+    speak(p.nl, slow ? Math.max(0.45, settings.audioRate * 0.65) : settings.audioRate)
     if (!played) {
       setPlayed(true)
       start.current = Date.now()

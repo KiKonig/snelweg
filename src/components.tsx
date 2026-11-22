@@ -4,7 +4,18 @@ import { useSettings } from './settings'
 
 export function PlayButton({ text, label = 'Anhören', slow = false }: { text: string; label?: string; slow?: boolean }) {
   const { settings } = useSettings()
-  const rate = slow ? Math.max(0.5, settings.audioRate - 0.3) : settings.audioRate
+  const rate = slow ? Math.max(0.45, settings.audioRate * 0.65) : settings.audioRate
+  if (slow) {
+    // Clearly different from the normal speaker: a labelled pill.
+    return (
+      <button class="slow-btn" aria-label={`${label}: ${text}`} disabled={!settings.audioOn} onClick={() => speak(text, rate)}>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" />
+        </svg>
+        langsam
+      </button>
+    )
+  }
   return (
     <button
       class="icon-btn play"

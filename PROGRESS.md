@@ -28,7 +28,8 @@
 - In "Sag es": speak into the mic first → answer is revealed with the score, and the matching self-grade is suggested (self-grading stays)
 - Record yourself (MediaRecorder, works offline) → play yours and the model; last 20 recordings kept on device, deletable, excluded from export (`src/recorder.ts`)
 - Mic tools also in new-phrase intros and on every phrase in Sprechen (🎤); settings toggle + dictation hint
-- Not verified on a real iPhone yet (speech recognition in home-screen apps, audio routing after mic use)
+- v0.3.1: recognition listens continuously and stops itself after a 1.6 s pause once speech was heard (7 s if nothing heard, 12 s cap, or "fertig" tap); restarts once if iOS ends the session immediately; cancels TTS before listening; "aborted"/"no-speech" no longer fatal. Slow-audio button is now a dashed "langsam" pill (was an identical speaker icon), rate 0.65× of normal.
+- On iPhone it worked "sometimes" with v0.3.0 (cut off at first pause) – v0.3.1 fix not yet confirmed on device
 
 ## Next (in spec order, shipped as soon as usable)
 - Dialogues with role-play, personal answers screen

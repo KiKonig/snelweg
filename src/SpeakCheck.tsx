@@ -7,6 +7,7 @@ import {
   listen,
   LISTEN_ERROR_TEXT,
   recognitionSupported,
+  cancelListening,
   stopListening,
   verdict,
   type ListenError,
@@ -51,7 +52,7 @@ export function SpeakCheck({ text, onScore, compact = false }: { text: string; o
     setMine(null)
     setInterim('')
     return () => {
-      stopListening()
+      cancelListening()
       rec.current?.stop()
     }
   }, [text])
@@ -99,7 +100,7 @@ export function SpeakCheck({ text, onScore, compact = false }: { text: string; o
       <div class="row-inline">
         {canCheck && (
           <button class={`btn mic ${state === 'listening' ? 'live' : ''}`} onClick={check} disabled={state === 'recording'}>
-            {state === 'listening' ? '● Ich höre zu …' : '🎤 Aussprache prüfen'}
+            {state === 'listening' ? '● Ich höre zu … (tippen = fertig)' : '🎤 Aussprache prüfen'}
           </button>
         )}
         {recordingSupported && (
@@ -119,7 +120,7 @@ export function SpeakCheck({ text, onScore, compact = false }: { text: string; o
           </button>
           <span class="muted small">Vorbild:</span>
           <PlayButton text={text} label="Vorbild anhören" />
-          <PlayButton text={text} slow label="Vorbild langsam" />
+          <PlayButton text={text} slow label="Vorbild langsam anhören" />
         </div>
       )}
     </div>

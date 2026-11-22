@@ -227,6 +227,28 @@ header.top h1 {
   background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
+.slow-btn {
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  touch-action: manipulation;
+  flex-shrink: 0;
+}
+
+.slow-btn:disabled {
+  opacity: 0.35;
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
